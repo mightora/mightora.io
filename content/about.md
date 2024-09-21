@@ -30,5 +30,3 @@ For legal purposes, please note that *Mightora* is a trading name of **Tweed Tec
 We believe in the power of collaboration and community-driven development. If you have suggestions, ideas, or would like to contribute, feel free to reach out to us. Together, we can continue to build and improve these tools for everyone’s benefit.
 
 Explore our connectors, start building, and let's create amazing automation experiences together!
-
-
