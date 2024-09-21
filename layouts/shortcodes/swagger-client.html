@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" />
+<style>
+  /* Load a custom font, if necessary */
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+  
+  /* Override Swagger UI font */
+  .swagger-ui, .swagger-ui .wrapper, .swagger-ui .opblock, .swagger-ui .opblock-summary-description, .swagger-ui .opblock-summary-path, .swagger-ui .opblock-title {
+      font-family: 'Quicksand', sans-serif !important; /* Use your preferred font here */
+  }
+
+
+
+  </style>
+<div id="swagger-ui"></div>
+<script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js" crossorigin></script>
+<script>
+  window.onload = () => {
+    window.ui = SwaggerUIBundle({
+      url: '{{ .Get 0 }}',
+      dom_id: '#swagger-ui',
+    });
+  };
+</script>

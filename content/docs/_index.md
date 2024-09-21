@@ -3,16 +3,12 @@ title: Documentation
 next: first-page
 ---
 
-This is a demo of the theme's documentation layout.
+Please feel free to explore our documentation. 
 
-## Hello, World!
 
-```go {filename="main.go"}
-package main
+## Explore
 
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
-```
+{{< cards >}}
+  {{< card link="/docs/calculateworkingday/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
+  {{< card link="/docs/emaildomainchecker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
+{{< /cards >}}

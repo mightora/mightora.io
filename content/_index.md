@@ -1,17 +1,17 @@
 ---
-title: My Site
+title: unleash the might of automation
 toc: false
 ---
 
-This is the landing page.
+We have built a number of automations to assist your development on the Power Platform. For more infoamtion please free to reachout to me via the contact button. 
 
 ## Explore
 
 {{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
+  {{< card link="/docs/calculateworkingday/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
+  {{< card link="/docs/emaildomainchecker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
 {{< /cards >}}
 
 ## Documentation
 
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+At Mightora.io, we are dedicated to transforming your development process by offering exceptional Power Automate connectors and APIs. Our goal is to not only reduce your development costs but also empower your developers to embrace citizen development. With our innovative solutions, you can expect a seamless and efficient development experience that will drive your success forward.
