@@ -5,7 +5,7 @@ weight: 9
 ---
 
 {{< callout type="info" >}}
-  Use the API key `free`.
+  Use the API key `free` and endpint `Blobr`.
 {{< /callout >}}
 
 {{< swagger-client "https://raw.githubusercontent.com/mightora/customConnectors/main/emailDomainChecker/swagger.json" >}}

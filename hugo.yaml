@@ -18,8 +18,8 @@ markup:
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: Power Automate Connectors
+      pageRef: /power-automate-connectors
       weight: 1
     - name: About
       pageRef: /about
