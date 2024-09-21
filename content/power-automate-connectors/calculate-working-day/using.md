@@ -5,7 +5,7 @@ weight: 7
 ---
 To use our connector;
 1. Add it in to your Power Automate Flow.
-2. Create your connection by entering your Mightora IO API key from [RapidAPI](https://mightora.io/calculate-working-day/get-api-key) or [Blobr](https://mightora.io/blobr-catalog)
+2. Create your connection by entering the API key free and choosing Blobr. 
 3. Choose your action
 4. Pass in the optional and required parameters depending on the action. 
 ## Parameters that can be used
