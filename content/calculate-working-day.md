@@ -7,7 +7,7 @@ type: about
 Use api key free and endpoint Blobr
 
 
-## Explore
+## Explore our automation tools
 
 {{< cards >}}
   {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
