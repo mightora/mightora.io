@@ -12,6 +12,10 @@ We have built a number of automations to assist your development on the Power Pl
   {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
 {{< /cards >}}
 
-## Documentation
+## About
 
 At Mightora.io, we are dedicated to transforming your development process by offering exceptional Power Automate connectors and APIs. Our goal is to not only reduce your development costs but also empower your developers to embrace citizen development. With our innovative solutions, you can expect a seamless and efficient development experience that will drive your success forward.
+
+{{< cards >}}
+  {{< card link="/about/" title="Find out more about mightora.io">}}
+{{< /cards >}}
