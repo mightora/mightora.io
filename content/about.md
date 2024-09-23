@@ -37,7 +37,7 @@ Explore our connectors, start building, and let's create amazing automation expe
 ## Credits
 Thanks to
 - The creators of Hugo
-- https://github.com/imfing for the theme. 
+- https://github.com/imfing for the theme https://github.com/imfing/hextra.
 - Favicon Generator https://realfavicongenerator.net/
 
 
