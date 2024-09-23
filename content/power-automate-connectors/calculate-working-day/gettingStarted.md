@@ -2,6 +2,7 @@
 title: Getting Started
 type: docs
 weight: 2
+prev: /power-automate-connectors/calculate-working-day
 ---
 You can use this connector in the following cases:
 1. Add the step in to your Power Automate Flow
