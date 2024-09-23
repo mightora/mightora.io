@@ -21,6 +21,9 @@ We offer a variety of connectors designed to simplify and enhance your automatio
 
 In addition to our connectors, we also maintain a blog at [techtweedie.github.io](https://techtweedie.github.io). Here, we share insights, tutorials, and updates about automation, development, and our ongoing projects. Be sure to check it out for the latest information and tips on making the most of our tools.
 
+[![TechTweedie](/images/TechTweedie_bw.png)](https://techtweedie.github.io)
+
+
 ## Legal Notice
 
 For legal purposes, please note that *Mightora* is a trading name of **Tweed Technology Limited**, and Tweed Technology accepts all risks and liabilities associated with the use of these connectors.
@@ -31,7 +34,7 @@ We believe in the power of collaboration and community-driven development. If yo
 
 Explore our connectors, start building, and let's create amazing automation experiences together!
 
-# Credits
+## Credits
 - Thankyou to the creators of Hugo
 - Thanks to https://github.com/imfing for the theme. 
 

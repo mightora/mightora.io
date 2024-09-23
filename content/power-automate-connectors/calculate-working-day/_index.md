@@ -2,6 +2,7 @@
 title: Calculate Working Day
 type: docs
 weight: 1
+next: /calculate-working-day/gettingstarted/
 sidebar:
   open: true
 ---

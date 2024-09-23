@@ -5,4 +5,4 @@ weight: 5
 ---
 It is free to use this connector, and no regestration is required. 
 
-If asked please enter `free` when asked for api key and select your endpoint as `Blobr`.
+If asked for API key please enter `free` and if asked for endpoint select `RapidAPI`.
