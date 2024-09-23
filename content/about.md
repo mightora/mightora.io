@@ -35,8 +35,10 @@ We believe in the power of collaboration and community-driven development. If yo
 Explore our connectors, start building, and let's create amazing automation experiences together!
 
 ## Credits
-- Thankyou to the creators of Hugo
-- Thanks to https://github.com/imfing for the theme. 
+Thanks to
+- The creators of Hugo
+- https://github.com/imfing for the theme. 
+- Favicon Generator https://realfavicongenerator.net/
 
 
 
