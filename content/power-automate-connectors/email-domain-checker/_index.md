@@ -2,6 +2,7 @@
 title: Email Domain Checker
 type: docs
 weight: 1
+prev: /power-automate-connectors/email-domain-checker/
 next: /power-automate-connectors/email-domain-checker/gettingstarted/
   open: true
 ---
