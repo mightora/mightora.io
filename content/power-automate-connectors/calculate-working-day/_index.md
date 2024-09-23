@@ -2,7 +2,8 @@
 title: Calculate Working Day
 type: docs
 weight: 1
-next: /power-automate-connectors/calculate-working-day/gettingstarted/
+prev: /power-automate-connectors
+next: /power-automate-connectors/calculate-working-day/gettingstarted
 sidebar:
   open: true
 ---
