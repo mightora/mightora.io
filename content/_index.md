@@ -1,5 +1,5 @@
 ---
-title: unleash the might of automation
+title: unleash the might of automation with free tools from TechTweedie
 toc: false
 ---
 
@@ -14,7 +14,10 @@ We have built a number of automations to assist your development on the Power Pl
 
 ## About
 
-At Mightora.io, we are dedicated to transforming your development process by offering exceptional Power Automate connectors and APIs. Our goal is to not only reduce your development costs but also empower your developers to embrace citizen development. With our innovative solutions, you can expect a seamless and efficient development experience that will drive your success forward.
+Mightora.io is dedicated to helping other developers with the Power Platform. Through mightora.io, we share our Power Automate Connectors and Functions, along with Azure DevOps (ADO) extensions designed to make it easier to work with the Power Platform inside Pipelines on ADO. 
+Our goal is to not only reduce your development costs but also empower your developers to embrace citizen development.
+Mightora’s tools are all from TechTweedie. For more information, visit [techtweedie.github.io](https://techtweedie.github.io) or [iantweedie.biz](https://iantweedie.biz).
+
 
 {{< cards >}}
   {{< card link="/about/" title="Find out more about mightora.io">}}
