@@ -6,7 +6,7 @@ weight: 8
 To deploy the Power Platform Dataverse 4 Teams Scripts, follow these steps:
 
 ## Option 1 
-Use https://github.com/mightora/Power-Platform-Dataverse4Teams-Tool as a template for your own repository 
+Use https://github.com/mightora/Power-Platform-Dataverse4Teams-Tools as a template for your own repository 
 
 ## Option 2
 Clone the repository to your local machine 

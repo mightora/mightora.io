@@ -19,3 +19,9 @@
     --primary-hue: 100deg;
     --primary-saturation: 90%;
   }
+
+.hx-text-primary-800 {
+    --tw-text-opacity: 1;
+    /*color: hsl(var(--primary-hue) var(--primary-saturation) 32% / var(--tw-text-opacity)); */
+    color: hsl(82, 79%, 11% / var(--tw-text-opacity));
+}
