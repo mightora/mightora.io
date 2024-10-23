@@ -18,8 +18,11 @@ markup:
 
 menu:
   main:
-    - name: Power Automate Connectors
+    - name: Connectors
       pageRef: /power-automate-connectors
+      weight: 1
+    - name: Pipeline
+      pageRef: /pipeline-tools
       weight: 1
     - name: About
       pageRef: /about
