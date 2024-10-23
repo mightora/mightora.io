@@ -10,9 +10,9 @@ We have built a number of automations to assist your development on the Power Pl
 {{< cards >}}
   {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
   {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
-  {{< card link="/pipeline-tools/dataverse-4-teams/" title="Calculate Working Day" icon="powershell" tag="Powershell"  tagColor="green">}}
+  {{< card link="/pipeline-tools/dataverse-4-teams-tools/" title="Dataverse 4 Teams Tools" icon="powershell" tag="Powershell"  tagColor="green">}}
 {{< /cards >}}
-
+ 
 ## About
 
 Mightora.io is dedicated to helping other developers with the Power Platform. Through mightora.io, we share our Power Automate Connectors and Functions, along with Azure DevOps (ADO) extensions designed to make it easier to work with the Power Platform inside Pipelines on ADO. 
