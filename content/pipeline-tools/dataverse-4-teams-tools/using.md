@@ -1,5 +1,5 @@
 ---
-title: Using the connector
+title: Using the script
 type: docs
 weight: 7
 ---
