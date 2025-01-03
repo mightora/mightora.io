@@ -14,7 +14,7 @@ Clone the repository to your local machine
 ## Option 3
 Add it as a submodule to an existing project.
 ```bash
-git submodule add https://github.com/mightora/Power-Platform-Dataverse4Teams-Tools.git
+git submodule add https://github.com/mightora/Power-Platform-Dataverse4Teams-Tools.git dataverse4TeamsTools
 git submodule update --init --recursive
 ```
 
