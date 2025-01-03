@@ -10,6 +10,9 @@ Performs a combination of all of the endpoints in one response.
 ### Basic Next Working Day
 Finds the next working day based on a working week of Monday to Friday.
 
+###  Date Difference Calculator **NEW COMING SOON**
+This action uses multiple variables to determine what your working days are between two dates. 
+
 ### Next Working Day
 This action uses multiple variables to determine what your working days are in order to return the correct Next Working Day after the date you provide. 
 
