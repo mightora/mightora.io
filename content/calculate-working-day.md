@@ -6,6 +6,8 @@ type: about
 ## Quickstart
 Use api key free and endpoint `RapidAPI`
 
+## Watch the Video
+{{< youtube QVesCxG9-80 >}}
 
 ## Explore our automation tools
 
