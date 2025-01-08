@@ -9,9 +9,9 @@ Please feel free to explore our free Power Automate Connectors.
 ## Connectors we Host
 These are certified connectors where we host the backend.
 
-<div id="hitsCard" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; height: 150px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-    <p id="hitsCount" style="font-size: 24px; font-weight: bold;">Loading...</p>
-    <h3 style="margin: 0;">Hits in the Last Week</h3>
+<div id="hitsCard" style="margin-top: 5px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; height: 40px; display: flex; align-items: center; justify-content: center;">
+    <div id="hitsCount" style="font-size: 24px; font-weight: bold; margin-right: 10px;">Loading...</div>
+    <div style="margin: 0;">Hits on our tools in the Last Week</div>
 </div>
 
 {{< cards >}}
