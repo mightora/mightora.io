@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
   {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
   {{< card link="/pipeline-tools/dataverse-4-teams-tools/" title="Dataverse 4 Teams Tools" icon="powershell" tag="Powershell"  tagColor="green">}}
+  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email With Graph" icon="email-at" tag="Flow" tagColor="blue">}}
 {{< /cards >}}
  
 ## About
