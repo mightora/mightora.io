@@ -23,5 +23,5 @@ To get started you will need to;
 - Limit exchange access
 - Deploy the connector
 
-For a full guide on how to install it check out my blog post here: 
-[https://mightora.io/power-automate-connectors/send-email-with-graph/](https://mightora.io/power-automate-connectors/send-email-with-graph/)
+For a full guide on how to install it check out my blog post here:
+https://techtweedie.github.io/posts/send-emails-from-flow-without-a-service-account/
