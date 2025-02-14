@@ -4,4 +4,4 @@ type: docs
 weight: 6
 ---
 * Currently there are no knonw issues
-* Currently we limit to 1000 calls per minute, we will look to increase this if there is demand.
+* Please see [https://learn.microsoft.com/en-us/graph/throttling-limits](https://learn.microsoft.com/en-us/graph/throttling-limits) for Graph API Limits.
