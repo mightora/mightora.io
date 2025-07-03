@@ -7,6 +7,11 @@ draft: false
 type: docs
 ---
 
+## Getting started 
+
+{{< youtube IKgxUOEDFog >}}
+
+For a detailed walkthrough and additional insights, check out this comprehensive blog post: [Running Playwright Tests in Azure DevOps for Power Platform](https://techtweedie.github.io/posts/250702-running-playwright-tests-in-azure-devops-for-power-platform/) which covers the complete setup process and best practices.
 
 ## Prerequisites
 

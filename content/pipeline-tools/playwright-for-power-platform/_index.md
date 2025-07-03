@@ -11,6 +11,10 @@ sidebar:
 
 Automate end-to-end testing for Power Platform apps using Playwright in Azure DevOps pipelines. This extension provides a seamless setup, robust test execution, and advanced reporting for Power Platform solutions.
 
+{{< youtube IKgxUOEDFog >}}
+
+For a detailed walkthrough and additional insights, check out this comprehensive blog post: [Running Playwright Tests in Azure DevOps for Power Platform](https://techtweedie.github.io/posts/250702-running-playwright-tests-in-azure-devops-for-power-platform/) which covers the complete setup process and best practices.
+
 - **Zero Configuration Setup**: Installs and configures Playwright automatically
 - **Optimized for Power Platform**: Handles authentication and common scenarios
 - **Enterprise Ready**: Detailed reports and advanced failure analysis
