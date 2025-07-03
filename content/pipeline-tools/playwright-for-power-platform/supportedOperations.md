@@ -4,6 +4,7 @@ description: "Features and operations supported by the Playwright for Power Plat
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
+type: docs
 ---
 
 

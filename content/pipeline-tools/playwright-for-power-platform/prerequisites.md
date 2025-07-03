@@ -4,6 +4,7 @@ description: "Requirements for using the Playwright for Power Platform DevOps ex
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
+type: docs
 ---
 
 

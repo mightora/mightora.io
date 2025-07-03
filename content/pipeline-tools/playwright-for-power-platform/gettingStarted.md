@@ -4,6 +4,7 @@ description: "How to set up and use the Playwright for Power Platform DevOps ext
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
+type: docs
 ---
 
 
