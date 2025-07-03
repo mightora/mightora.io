@@ -1,11 +1,11 @@
 ---
-title: "Deployment Guide for Playwright for Power Platform"
+title: "Deployment Guide"
 description: "How to deploy and configure the Playwright for Power Platform DevOps extension in Azure DevOps pipelines."
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
 ---
-# Deployment Guide
+
 
 ## Installing the Extension
 

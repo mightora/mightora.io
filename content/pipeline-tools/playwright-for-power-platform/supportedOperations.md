@@ -1,12 +1,11 @@
 ---
-title: "Supported Operations in Playwright for Power Platform"
+title: "Supported Operations"
 description: "Features and operations supported by the Playwright for Power Platform DevOps extension."
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
 ---
 
-# Supported Operations
 
 - Automated UI testing for Power Platform apps
 - Office 365 authentication flows

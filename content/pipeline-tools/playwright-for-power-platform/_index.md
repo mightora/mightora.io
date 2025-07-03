@@ -4,8 +4,10 @@ description: "Automate end-to-end testing for Power Platform apps using Playwrig
 date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
+sidebar:
+  open: false
 ---
-# Playwright for Power Platform DevOps Extension
+
 
 Automate end-to-end testing for Power Platform apps using Playwright in Azure DevOps pipelines. This extension provides a seamless setup, robust test execution, and advanced reporting for Power Platform solutions.
 
