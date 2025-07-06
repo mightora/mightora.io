@@ -3,18 +3,37 @@ title: unleash the might of automation with free tools from TechTweedie
 toc: false
 ---
 
-We have built a number of automations to assist your development on the Power Platform. For more infoamtion please free to reachout to me via the contact button. 
+We have built a number of automations to assist your development on the Power Platform. For more information please feel free to reach out to me via the contact button. 
 
 </br>
 
 </br>
 
-<a href="/analytics" style="text-decoration: none; color: inherit;">
-    <div id="hitsCard" style="margin-top: 5px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; height: 40px; display: flex; align-items: center; justify-content: center;">
-        <div id="hitsCount" style="font-size: 24px; font-weight: bold; margin-right: 10px;">Loading...</div>
-        <div style="margin: 0;">hits on our tools in the Last Week, view our stats here</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;">
+    <a href="/analytics" style="text-decoration: none; color: inherit;">
+        <div id="hitsCard" style="padding: 15px; border: 2px solid #0078d4; border-radius: 8px; background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+            <div style="text-align: center;">
+                <div id="hitsCount" style="font-size: 28px; font-weight: bold; color: #0078d4; margin-bottom: 5px;">Loading...</div>
+                <div style="font-size: 14px; color: #666;">API calls this week</div>
+                <div style="font-size: 12px; color: #888; margin-top: 5px;">Click for detailed analytics</div>
+            </div>
+        </div>
+    </a>
+<div style="padding: 15px; border: 2px solid #28a745; border-radius: 8px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div style="text-align: center;">
+            <div id="yesterdayHitsCount" style="font-size: 28px; font-weight: bold; color: #28a745; margin-bottom: 5px;">Loading...</div>
+            <div style="font-size: 14px; color: #666;">API calls yesterday</div>
+            <div style="font-size: 12px; color: #888; margin-top: 5px;">24-hour activity</div>
+        </div>
     </div>
-</a>
+</div>
+
+<style>
+#hitsCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.2);
+}
+</style>
 
 <script>
 console.log("Script loaded");
@@ -90,7 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
   {{< card link="/pipeline-tools/power-platform-devops-extension/" title="Power Platform DevOps Extension" icon="rocket" tag="Pipeline"  tagColor="green">}}
   {{< card link="/pipeline-tools/playwright-for-power-platform/" title="Playwright for Power Platform DevOps Extension" icon="rocket" tag="Pipeline"  tagColor="green">}}
 {{< /cards >}}
- 
+
+## 🚀 Quick Start
+
+{{< cards >}}
+  {{< card link="/try-tools/" title="Try Before You Install" icon="play" tag="Interactive" tagColor="purple">}}
+  {{< card link="/community/" title="Join Our Community" icon="users" tag="5000+ Users" tagColor="green">}}
+  {{< card link="/testimonials/" title="Success Stories" icon="star" tag="Real Examples" tagColor="orange">}}
+{{< /cards >}}
+
 ## About
 
 Mightora.io is dedicated to helping other developers with the Power Platform. Through mightora.io, we share our Power Automate Connectors and Functions, along with Azure DevOps (ADO) extensions designed to make it easier to work with the Power Platform inside Pipelines on ADO. 

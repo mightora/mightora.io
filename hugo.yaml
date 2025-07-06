@@ -24,29 +24,38 @@ menu:
     - name: Pipeline
       pageRef: /pipeline-tools
       weight: 1
+    - name: Try Tools
+      pageRef: /try-tools
+      weight: 1
+    - name: Community
+      pageRef: /community
+      weight: 2
+    - name: News
+      pageRef: /news
+      weight: 2
     - name: About
       pageRef: /about
-      weight: 2
+      weight: 3
     - name: Privacy
       pageRef: /privacy
-      weight: 2
+      weight: 4
     - name: Status Page ↗
       url: "https://stats.uptimerobot.com/3EPW8gBu4N"
-      weight: 2
+      weight: 5
     - name: Contact ↗
       url: "https://iantweedie.biz"
-      weight: 3
+      weight: 6
     - name: Search
-      weight: 4
+      weight: 7
       params:
         type: search
     - name: GitHub
-      weight: 5
+      weight: 8
       url: "https://github.com/mightora"
       params:
         icon: github
     - name: Twitter
-      weight: 6
+      weight: 9
       url: "https://twitter.com/itweedie"
       params:
         icon: x-twitter
@@ -55,12 +64,24 @@ sidebar:
       params:
         type: separator
       weight: 1
+    - name: Try Tools
+      pageRef: /try-tools
+      weight: 2
+    - name: Community
+      pageRef: /community
+      weight: 3
+    - name: Newsletter
+      pageRef: /newsletter
+      weight: 4
+    - name: FAQ
+      pageRef: /faq
+      weight: 5
     - name: About
       pageRef: /about
-      weight: 2
+      weight: 6
     - name: Privacy
       pageRef: /privacy
-      weight: 3
+      weight: 7
 
 params:
   navbar:
