@@ -3,6 +3,8 @@ title: unleash the might of automation
 toc: true
 type: docs
 weight: 0
+aliases:
+  - /post250726/
 ---
 
 </br>
