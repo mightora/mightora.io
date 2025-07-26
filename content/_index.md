@@ -179,12 +179,16 @@ document.addEventListener('DOMContentLoaded', () => {
 ## Explore
 
 {{< cards >}}
-  {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
-  {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
-  {{< card link="/pipeline-tools/dataverse-4-teams-tools/" title="Dataverse 4 Teams Tools" icon="powershell" tag="Powershell"  tagColor="green">}}
-  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email With Graph" icon="email-at" tag="Flow" tagColor="blue">}}
-  {{< card link="/pipeline-tools/power-platform-devops-extension/" title="Power Platform DevOps Extension" icon="rocket" tag="Pipeline"  tagColor="green">}}
-  {{< card link="/pipeline-tools/playwright-for-power-platform/" title="Playwright for Power Platform DevOps Extension" icon="rocket" tag="CICD"  tagColor="green">}}
+  {{< card link="/tools/power-automate-templates/auto-tag-devops-tickets-into-emails/" title="Auto Tag DevOp sTickets into Emails" icon="email-at" tag="Email" tagColor="blue">}}
+  {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Calendar" tagColor="blue">}}
+  {{< card link="/pipeline-tools/dataverse-4-teams-tools/" title="Dataverse 4 Teams Tools" icon="powershell" tag="Powershell" tagColor="green">}}
+  {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Email" tagColor="blue">}}
+  {{< card link="/pipeline-tools/" title="Pipeline Tools" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/pipeline-tools/playwright-for-power-platform/" title="Playwright for Power Platform DevOps Extension" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/power-automate-connectors/" title="Power Automate Connectors" icon="powerautomate" tag="Flow" tagColor="blue">}}
+  {{< card link="/tools/power-automate-templates/" title="Power Automate Templates" icon="powerautomate" tag="Flow" tagColor="blue">}}
+  {{< card link="/pipeline-tools/power-platform-devops-extension/" title="Power Platform DevOps Extension" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email with Graph" icon="email-at" tag="Email" tagColor="blue">}}
 {{< /cards >}}
  
 ## About
@@ -195,7 +199,16 @@ Mightora’s tools are all from TechTweedie. For more information, visit [techtw
 
 
 {{< cards >}}
-  {{< card link="/about/" title="Find out more about mightora.io">}}
+  {{< card link="/tools/power-automate-templates/auto-tag-devops-tickets-into-emails/" title="Auto Tag DevOp sTickets into Emails" icon="email-at" tag="Email" tagColor="blue">}}
+  {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Calendar" tagColor="blue">}}
+  {{< card link="/pipeline-tools/dataverse-4-teams-tools/" title="Dataverse 4 Teams Tools" icon="powershell" tag="Powershell" tagColor="green">}}
+  {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Email" tagColor="blue">}}
+  {{< card link="/pipeline-tools/" title="Pipeline Tools" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/pipeline-tools/playwright-for-power-platform/" title="Playwright for Power Platform DevOps Extension" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/power-automate-connectors/" title="Power Automate Connectors" icon="powerautomate" tag="Flow" tagColor="blue">}}
+  {{< card link="/tools/power-automate-templates/" title="Power Automate Templates" icon="powerautomate" tag="Flow" tagColor="blue">}}
+  {{< card link="/pipeline-tools/power-platform-devops-extension/" title="Power Platform DevOps Extension" icon="rocket" tag="Pipeline" tagColor="green">}}
+  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email with Graph" icon="email-at" tag="Email" tagColor="blue">}}
 {{< /cards >}}
 
 </br>

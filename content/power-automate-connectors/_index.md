@@ -15,9 +15,9 @@ These are certified connectors where we host the backend.
 </div>
 
 {{< cards >}}
-  {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Flow"  tagColor="blue">}}
-  {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Flow" tagColor="blue">}}
-  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email With Graph" icon="email-at" tag="Flow" tagColor="blue">}}
+  {{< card link="/power-automate-connectors/calculate-working-day/" title="Calculate Working Day" icon="calendar" tag="Calendar" tagColor="blue">}}
+  {{< card link="/power-automate-connectors/email-domain-checker/" title="Email Domain Checker" icon="email-at" tag="Email" tagColor="blue">}}
+  {{< card link="/power-automate-connectors/send-email-with-graph/" title="Send Email with Graph" icon="email-at" tag="Email" tagColor="blue">}}
 {{< /cards >}}
 
 
