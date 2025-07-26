@@ -1,6 +1,7 @@
 ---
 title: Power Automate Templates 
-
+sidebar:
+  open: true
 ---
 
 

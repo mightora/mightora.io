@@ -18,11 +18,8 @@ markup:
 
 menu:
   main:
-    - name: Connectors
-      pageRef: /power-automate-connectors
-      weight: 1
-    - name: CI/CD
-      pageRef: /pipeline-tools
+    - name: Tools
+      pageRef: /tools
       weight: 1
     - name: About
       pageRef: /about
@@ -51,22 +48,6 @@ menu:
       params:
         icon: x-twitter
 sidebar:
-    - name: More
-      params:
-        type: separator
-      weight: 1
-    - name: Try Tools
-      pageRef: /try-tools
-      weight: 2
-    - name: Community
-      pageRef: /community
-      weight: 3
-    - name: Newsletter
-      pageRef: /newsletter
-      weight: 4
-    - name: FAQ
-      pageRef: /faq
-      weight: 5
     - name: About
       pageRef: /about
       weight: 6

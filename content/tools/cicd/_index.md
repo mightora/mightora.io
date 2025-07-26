@@ -2,7 +2,8 @@
 title: Pipeline Tools
 aliases:
   - /pipeline-tools/
-
+sidebar:
+  open: true
 ---
 
 Please feel free to explore our free Pipeline Tools.

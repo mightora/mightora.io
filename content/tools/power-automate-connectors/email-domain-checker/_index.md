@@ -3,7 +3,7 @@ title: Email Domain Checker
 type: docs
 weight: 1
 sidebar:
-  open: false
+  open: true
 aliases:
   - /email-checker/
   - /power-automate-connectors/email-domain-checker/

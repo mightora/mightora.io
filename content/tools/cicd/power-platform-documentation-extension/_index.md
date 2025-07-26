@@ -2,7 +2,7 @@
 title: Power Platform Documentation Extension
 type: docs
 sidebar:
-  open: false
+  open: true
 aliases:
   - /pipeline-tools/power-platform-devops-extension/
 ---

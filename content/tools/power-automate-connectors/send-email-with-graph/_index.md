@@ -5,7 +5,7 @@ weight: 1
 prev: /power-automate-connectors/send-email-with-graph/
 next: /power-automate-connectors/send-email-with-graph/gettingstarted/
 sidebar:
-  open: false
+  open: true
 aliases:
   - /power-automate-connectors/send-email-with-graph/
 ---

@@ -3,7 +3,7 @@ title: Dataverse 4 Teams Tools
 type: docs
 weight: 1
 sidebar:
-  open: false
+  open: true
 aliases:
   - /pipeline-tools/dataverse-4-teams-tools/
 ---

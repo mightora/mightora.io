@@ -5,7 +5,7 @@ date: 2025-07-02
 categories: ["Pipeline Tools", "Testing", "Power Platform", "DevOps"]
 draft: false
 sidebar:
-  open: false
+  open: true
 aliases:
   - /pipeline-tools/playwright-for-power-platform/
 ---

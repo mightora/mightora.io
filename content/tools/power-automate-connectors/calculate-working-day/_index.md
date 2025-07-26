@@ -3,7 +3,7 @@ title: Calculate Working Day
 type: docs
 weight: 1
 sidebar:
-  open: false
+  open: true
 aliases:
   - /calculate-working-day/
   - /power-automate-connectors/calculate-working-day/

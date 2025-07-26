@@ -2,6 +2,8 @@
 title: Power Automate Connectors
 aliases:
   - /power-automate-connectors/
+sidebar:
+  open: true
 ---
 
 Please feel free to explore our free Power Automate Connectors. 
