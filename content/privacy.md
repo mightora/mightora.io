@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 type: docs
+toc: true
 ---
 
 Last updated: August 25, 2023

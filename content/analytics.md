@@ -1,3 +1,10 @@
+---
+title: Analytics
+type: docs
+toc: true
+---
+
+
 # Transparent Insights Into Our Tools
 
 At Mightora.io, we are passionate about empowering the **Power Platform community** with tools that integrate seamlessly with Azure, Power Platform, and Azure DevOps. Ensuring these tools deliver real value is a top priority for us.

@@ -1,7 +1,9 @@
 ---
 title: Frequently Asked Questions
 type: docs
+toc: true
 ---
+
 
 Get quick answers to common questions about Mightora tools and Power Platform automation.
 

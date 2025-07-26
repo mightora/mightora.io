@@ -1,6 +1,7 @@
 ---
 title: About
-type: about
+type: docs
+toc: true
 ---
 
 # About Mightora.io
