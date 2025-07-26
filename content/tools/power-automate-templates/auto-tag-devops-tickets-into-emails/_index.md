@@ -1,5 +1,5 @@
 ---
-title: Auto Tag DevOp sTickets into Emails
+title: Auto Tag DevOps Tickets into Emails
 type: docs
 weight: 1
 sidebar:

@@ -6,6 +6,8 @@ prev: /power-automate-connectors/send-email-with-graph/
 next: /power-automate-connectors/send-email-with-graph/gettingstarted/
 sidebar:
   open: false
+aliases:
+  - /power-automate-connectors/send-email-with-graph/
 ---
 
 ## Introduction

@@ -1,6 +1,7 @@
 ---
 title: Power Automate Connectors
-
+aliases:
+  - /power-automate-connectors/
 ---
 
 Please feel free to explore our free Power Automate Connectors. 
