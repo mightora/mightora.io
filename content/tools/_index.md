@@ -4,6 +4,7 @@ aliases:
   - /tools/
 sidebar:
   open: true
+weight: 2
 ---
 
 Discover a curated selection of powerful tools designed to streamline your workflows and enhance productivity. Dive into our free Pipeline Tools and unlock new possibilities for your projects. Each tool has been meticulously crafted by Ian Tweedie, also known as Tech Tweedie, a renowned expert in the field of technology and automation.

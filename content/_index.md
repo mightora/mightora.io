@@ -7,7 +7,8 @@ weight: 0
 
 </br>
 
-# WITH 16 FREE TOOLS FOR THE COMUNITY 
+# with 16 free tools for the community
+</br>
 
 <a href="/analytics" style="text-decoration: none; color: inherit;">
     <div id="hitsCard" style="margin-top: 5px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; height: 40px; display: flex; align-items: center; justify-content: center;">
