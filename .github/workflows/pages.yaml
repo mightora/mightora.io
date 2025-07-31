@@ -55,37 +55,40 @@ jobs:
       - name: Update Hugo Cards
         run: |
           python3 .github/workflows/update_cards.py .
-      - name: Backup processed markdown to posts branch
+      - name: Backup processed tools folder to posts branch
         run: |
           # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Create posts directory and copy processed markdown files
-          mkdir -p posts
-          find . -name "*.md" -path "./content/*" -exec cp {} posts/ \;
-          
-          # Check if posts branch exists, if so delete it remotely and locally
-          git ls-remote --exit-code --heads origin posts-backup && git push origin --delete posts-backup || true
-          git branch -D posts-backup 2>/dev/null || true
-          
-          # Create new orphan branch
-          git checkout --orphan posts-backup
-          
-          # Remove all files except posts folder
-          git rm -rf . || true
-          
-          # Add only the posts folder (if it has content)
-          if [ "$(ls -A posts 2>/dev/null)" ]; then
+          # Check if tools folder exists and has content
+          if [ -d "content/tools" ] && [ "$(ls -A content/tools 2>/dev/null)" ]; then
+            # Create posts directory and copy the entire tools folder structure
+            mkdir -p posts
+            cp -r content/tools posts/
+            
+            # Check if posts branch exists, if so delete it remotely and locally
+            git ls-remote --exit-code --heads origin posts-backup && git push origin --delete posts-backup || true
+            git branch -D posts-backup 2>/dev/null || true
+            
+            # Create new orphan branch
+            git checkout --orphan posts-backup
+            
+            # Remove all files except posts folder
+            git rm -rf . || true
+            
+            # Add the posts folder with tools content
             git add posts/
-            git commit -m "Backup processed markdown files - $(date)"
+            git commit -m "Backup processed tools folder - $(date)"
             git push origin posts-backup
+            
+            # Return to main branch
+            git checkout main
           else
-            echo "No markdown files found to backup"
+            echo "No tools folder found or tools folder is empty"
+            # Still return to main branch in case we're on a different branch
+            git checkout main 2>/dev/null || true
           fi
-          
-          # Return to main branch
-          git checkout main
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
