@@ -75,12 +75,14 @@ jobs:
           # Remove all files except posts folder
           git rm -rf . || true
           
-          # Add only the posts folder
-          git add content/
-          
-          # Commit and push
-          git commit -m "Backup processed markdown files - $(date)"
-          git push origin posts-backup
+          # Add only the posts folder (if it has content)
+          if [ "$(ls -A posts 2>/dev/null)" ]; then
+            git add posts/
+            git commit -m "Backup processed markdown files - $(date)"
+            git push origin posts-backup
+          else
+            echo "No markdown files found to backup"
+          fi
           
           # Return to main branch
           git checkout main
