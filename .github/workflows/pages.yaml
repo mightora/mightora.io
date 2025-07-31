@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -55,6 +55,35 @@ jobs:
       - name: Update Hugo Cards
         run: |
           python3 .github/workflows/update_cards.py .
+      - name: Backup processed markdown to posts branch
+        run: |
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Create posts directory and copy processed markdown files
+          mkdir -p posts
+          find . -name "*.md" -path "./content/*" -exec cp {} posts/ \;
+          
+          # Check if posts branch exists, if so delete it remotely and locally
+          git ls-remote --exit-code --heads origin posts-backup && git push origin --delete posts-backup || true
+          git branch -D posts-backup 2>/dev/null || true
+          
+          # Create new orphan branch
+          git checkout --orphan posts-backup
+          
+          # Remove all files except posts folder
+          git rm -rf . || true
+          
+          # Add only the posts folder
+          git add posts/
+          
+          # Commit and push
+          git commit -m "Backup processed markdown files - $(date)"
+          git push origin posts-backup
+          
+          # Return to main branch
+          git checkout main
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
