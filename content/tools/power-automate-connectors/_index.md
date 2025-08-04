@@ -3,7 +3,7 @@ title: Power Automate Connectors
 aliases:
   - /power-automate-connectors/
 sidebar:
-  open: true
+  open: false
 ---
 
 Please feel free to explore our free Power Automate Connectors. 

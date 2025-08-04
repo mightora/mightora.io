@@ -1,7 +1,7 @@
 ---
 title: PowerApps Component Frameworks (PCFs)
 sidebar:
-  open: true
+  open: false
 ---
 
 ## PowerApps Component Frameworks (PCFs)
