@@ -1,5 +1,5 @@
 ---
-title: Auto Tag DevOps Tickets into Emails
+title: SharePoint with Graph Connector
 type: docs
 weight: 1
 sidebar:
