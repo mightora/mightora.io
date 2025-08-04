@@ -1,7 +1,7 @@
 ---
 title: Developer Scripts and Tools
 sidebar:
-  open: true
+  open: false
 ---
 
 ## Developer Scripts and Tools
