@@ -51,10 +51,29 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Process Markdown Includes
         run: |
+          echo "Running markdown include processor..."
           python3 .github/workflows/include_md.py .
+          echo "Markdown processing complete"
       - name: Update Hugo Cards
         run: |
+          echo "Running cards updater..."
           python3 .github/workflows/update_cards.py .
+          echo "Cards update complete"
+      - name: Verify processed content
+        run: |
+          echo "Checking for modified files..."
+          ls -la content/tools/
+          echo "Git status after Python processing:"
+          git status --porcelain
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Backup processed tools folder to posts branch
         run: |
           # Configure git
@@ -89,15 +108,6 @@ jobs:
             # Still return to main branch in case we're on a different branch
             git checkout main 2>/dev/null || true
           fi
-      - name: Build with Hugo
-        env:
-          # For maximum backward compatibility with Hugo modules
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --gc --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
