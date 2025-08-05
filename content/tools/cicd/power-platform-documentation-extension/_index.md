@@ -7,4 +7,4 @@ aliases:
   - /pipeline-tools/power-platform-devops-extension/
 ---
 
-<--include-md https://raw.githubusercontent.com/mightora/Power-Platform-DevOps-Extension/refs/heads/main/README.md skip=1 -->
+<--include-md https://raw.githubusercontent.com/mightora/Power-Platform-DevOps-Extension/refs/heads/main/src/details.md skip=1 -->
