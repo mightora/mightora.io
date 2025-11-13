@@ -1,6 +1,9 @@
 # Hugo configuration file
 title: mightora.io
 
+# Google Analytics
+googleAnalytics: G-W4X1ZLDG9T
+
 # import hextra as module
 module:
   imports:
