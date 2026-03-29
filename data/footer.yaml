@@ -8,17 +8,17 @@
 brands:
   - name: "mightora.io"
     url: "https://mightora.io"
-    logo: "/images/mightoraIoLogo4-200x900.png"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png"
     description: "Free tools for the Power Platform community"
 
   - name: "Tech Tweedie"
     url: "https://techtweedie.github.io"
-    logo: "/images/TechTweedie_bw.png"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/TechTweedie_bw.png"
     description: "Technical blog and tutorials by Ian Tweedie"
 
   - name: "Tweed.technology"
     url: "https://tweed.technology"
-    logo: "/images/tweedTechnologyLogoLight.png"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/tweedTechnologyLogoLight.png"
     description: "Technology consulting by Ian Tweedie"
 
 sections:
@@ -108,3 +108,5 @@ sections:
         url: "https://stats.uptimerobot.com/3EPW8gBu4N"
       - name: "All Links ↗"
         url: "https://linktr.ee/itweedie"
+      - name: "Coaching ↗"
+        url: "https://partners.simply.coach/ian-tweedie"
