@@ -35,9 +35,14 @@
       <div class="footer-nav-grid">
         {{- range $col := slice 1 2 3 -}}
           {{- $targetCol := printf "%v" $col -}}
+          {{- $colSections := slice -}}
+          {{- range $footerSections -}}
+            {{- if eq (printf "%v" .column) $targetCol -}}
+              {{- $colSections = $colSections | append . -}}
+            {{- end -}}
+          {{- end -}}
           <div>
-            {{- range $footerSections -}}
-              {{- if eq (printf "%v" .column) $targetCol -}}
+            {{- range sort $colSections "position" -}}
               <div class="hx-mb-8">
                 <h3 class="footer-section-title">{{ .title }}</h3>
                 <ul>
@@ -48,7 +53,6 @@
                   {{- end -}}
                 </ul>
               </div>
-              {{- end -}}
             {{- end -}}
           </div>
         {{- end -}}
