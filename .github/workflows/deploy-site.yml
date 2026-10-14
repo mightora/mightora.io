@@ -35,18 +35,10 @@ jobs:
           HUGO_ENV: production
           HUGO_ENVIRONMENT: production
         run: hugo --gc --minify --baseURL "https://mightora.io/"
-      - name: Validate rendered catalogue
+      - name: Validate complete rendered catalogue
         run: |
           python3 scripts/validate_toolhub.py
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          html=Path('public/index.html').read_text(encoding='utf8')
-          yaml=Path('data/toolhub.yaml').read_text(encoding='utf8')
-          links=re.findall(r'^\s+url: (https://[^\s]+)',yaml,re.M)
-          assert all(link in html for link in links)
-          print(f'All {len(links)} applications have public-site links in index.html')
-          PY
+          python3 scripts/check_rendered_toolhub.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public

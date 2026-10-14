@@ -6,8 +6,8 @@
       <p class="mt-eyebrow"><span class="mt-pulse" aria-hidden="true"></span> FREE TOOLS FOR CURIOUS MAKERS</p>
       <h1 id="mt-hero-title">Unleash the might of <em>automation.</em></h1>
       <p class="mt-hero-lead">Explore practical tools for building, debugging, visualising and sharing. Made for the Power Platform community and beyond.</p>
-      <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#mt-platform-resources">Power Platform resources <span aria-hidden="true">↓</span></a></div>
-      <p class="mt-hero-stat">17 standalone applications <span aria-hidden="true">•</span> 6 collections <span aria-hidden="true">•</span> Free to explore</p>
+      <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#power-automate">Power Automate & connectors <span aria-hidden="true">↓</span></a></div>
+      <p class="mt-hero-stat">33 tools <span aria-hidden="true">•</span> 8 categories <span aria-hidden="true">•</span> Free to explore</p>
     </div>
     <div class="mt-hero-art" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 510" fill="none">
@@ -48,14 +48,14 @@
         <span>Security, dependencies, diagrams</span>
         <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
       </a>
-      <a class="mt-pillar" href="#mt-platform-resources" aria-label="Explore deployment, ALM and pipeline tooling">
+      <a class="mt-pillar" href="#devops" aria-label="Explore deployment, ALM and pipeline tooling">
         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 31C9 30 6 34 5 43c9-1 13-4 12-11M19 28c7-15 13-18 24-23-1 11-7 25-23 30l-7-7Z"/><circle cx="30" cy="18" r="4"/><path d="m14 35-7 6"/></svg>
         <strong>Deploy</strong>
         <span>ALM, settings, solution comparison</span>
         <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
       </a>
     </div>
-    <p class="mt-pillars-footnote">Independent tools and open Power Platform resources — all part of the Mightora family.</p>
+    <p class="mt-pillars-footnote">33 tools spanning browser apps, connectors, PCF controls, templates and DevOps extensions.</p>
   </section>
 
   <nav class="mt-jump" id="mt-categories" aria-label="Tool categories"><strong>EXPLORE BY TYPE</strong>{{ range $hub.groups }}<a href="#{{ .id }}">{{ .title }} <span aria-hidden="true">↗</span></a>{{ end }}</nav>
@@ -66,6 +66,8 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="43" height="43" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           {{ if eq .icon "chart" }}<rect x="5" y="7" width="38" height="34" rx="7"/><path d="M13 32V24M21 32V16M29 32V21M37 32V12" stroke-width="4"/>
           {{ else if eq .icon "flow" }}<rect x="4" y="16" width="14" height="15" rx="3"/><rect x="30" y="5" width="14" height="15" rx="3"/><rect x="30" y="28" width="14" height="15" rx="3"/><path d="M18 23H24V12H30M24 23V35H30"/>
+          {{ else if eq .icon "automate" }}<circle cx="10" cy="13" r="5"/><circle cx="38" cy="13" r="5"/><circle cx="24" cy="36" r="5"/><path d="M15 13h18M11 18l10 14M37 18 27 32"/>
+          {{ else if eq .icon "rocket" }}<path d="M15 30C9 30 7 35 6 42c7-1 12-3 12-10M20 28C27 12 34 8 43 5c-1 10-7 23-22 30l-8-7Z"/><circle cx="31" cy="19" r="4"/><path d="M15 36 7 43"/>
           {{ else if eq .icon "debug" }}<rect x="5" y="6" width="31" height="29" rx="6"/><path d="M13 16H28M13 23H24"/><circle cx="30" cy="30" r="9"/><path d="M37 37L44 44"/>
           {{ else if eq .icon "map" }}<rect x="17" y="4" width="14" height="12" rx="3"/><rect x="3" y="32" width="14" height="12" rx="3"/><rect x="31" y="32" width="14" height="12" rx="3"/><path d="M24 16V24M10 32V24H38V32"/>
           {{ else if eq .icon "present" }}<rect x="5" y="5" width="38" height="29" rx="4"/><path d="M24 34V43M16 43H32M13 25L21 16L27 21L35 12"/>
@@ -76,20 +78,13 @@
       <span class="mt-group-count">{{ len .tools }} tools</span>
     </div>
     <div class="mt-tool-grid">{{ range .tools }}
-      <a class="mt-tool" href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ .name }} in a new tab">
+      {{ $external := hasPrefix .url "https://" }}
+      <a class="mt-tool" href="{{ .url | safeURL }}" {{ if $external }}target="_blank" rel="noopener noreferrer" aria-label="Open {{ .name }} in a new tab"{{ else }}aria-label="View {{ .name }} documentation"{{ end }}>
         <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span><span class="mt-outbound" aria-hidden="true">↗</span></div>
-        <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">Open tool <span aria-hidden="true">→</span></span>
+        <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">{{ if $external }}Open tool{{ else }}Explore tool{{ end }} <span aria-hidden="true">→</span></span>
       </a>
     {{ end }}</div>
   </section>
   {{ end }}
-  <section id="mt-platform-resources" class="mt-original" aria-labelledby="mt-original-title">
-    <p class="mt-overline">POWER PLATFORM TOOLKIT</p>
-    <h2 id="mt-original-title">Connectors, controls & extensions</h2>
-    <p>Extend, automate and deliver with 16 documented Power Platform connectors, PCF controls, templates and DevOps extensions.</p>
-    <div class="mt-original-grid">{{ range $hub.legacy }}
-      <div><h3>{{ .title }}</h3><ul>{{ range .items }}<li><a href="{{ .url }}">{{ .name }} <span aria-hidden="true">↗</span></a></li>{{ end }}</ul></div>
-    {{ end }}</div>
-  </section>
   <section class="mt-contribute"><div><p class="mt-overline">BUILD WITH THE COMMUNITY</p><h2>Useful by design. Open to improvement.</h2><p>Explore the source and suggest improvements through GitHub.</p></div><a class="mt-btn mt-primary" href="https://github.com/mightora" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a></section>
 </div>
