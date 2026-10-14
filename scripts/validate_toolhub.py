@@ -18,14 +18,14 @@ expected_hosts = {
     "power-bi-diff", "semantic-model", "powerbi-inspector", "dax",
     "solution-explorer", "rest", "fetchflow", "expression-lab", "har",
     "architecture-lab", "code-diff", "qr", "radar", "connect",
-    "roadmaps", "beta.slides", "feedback",
+    "roadmaps", "beta.slides", "feedback", "custom-connector-builder",
 }
 actual_hosts = {urlparse(url).hostname.removesuffix(".mightora.io") for url in external}
 assert actual_hosts == expected_hosts, f"Unexpected/missing apps: {actual_hosts ^ expected_hosts}"
-assert len(external) == 17, f"Expected 17 hosted apps, got {len(external)}"
+assert len(external) == 24, f"Expected 24 externally linked resources, got {len(external)}"
 assert len(local) == 16, f"Expected 16 documented tools, got {len(local)}"
-assert len(urls) == len(names) == 33, (len(urls), len(names))
-assert len(set(urls)) == len(set(names)) == 33, "Duplicate tool links or names"
+assert len(urls) == len(names) == 40, (len(urls), len(names))
+assert len(set(urls)) == len(set(names)) == 40, "Duplicate tool links or names"
 assert len(re.findall(r"^  - id: ", source, re.M)) == 8, "Expected eight categories"
 assert "legacy:" not in source, "All tools must be under the same groups key"
 
@@ -40,7 +40,7 @@ assert "{{ range $hub.groups }}" in template
 assert "{{ range .tools }}" in template
 assert "$hub.legacy" not in template
 assert 'class="mt-original"' not in template
-assert "33 tools" in template and "8 categories" in template
+assert "40 tools" in template and "8 categories" in template
 assert 'hasPrefix .url "https://"' in template
 for label, anchor in (("Build", "power-platform"), ("Inspect", "diagnostics"),
                       ("Architect", "architecture"), ("Deploy", "devops")):
@@ -55,4 +55,15 @@ footer = (root / "layouts/partials/footer.html").read_text()
 assert "<mightora-author>" in footer and '<section class="mt-author-wrapper"' in footer
 assert "author-avatar" in footer and "author-blog-logo" in footer
 
-print("PASS: 33 unique tools (17 apps + 16 documentation pages), 8 categories, one catalogue")
+sample_slugs = [
+    "regex-tester", "markdown-html-converter", "compare-json-lists",
+    "business-rules-calculator", "pricing-calculator", "json-calculation-engine",
+]
+sample_urls = [
+    f"https://custom-connector-builder.mightora.io/#/connector/{slug}"
+    for slug in sample_slugs
+]
+assert all(url in external for url in sample_urls), "Missing a connector sample deep link"
+assert source.count("        kind: sample") == len(sample_slugs), "Sample count or classification mismatch"
+assert 'eq .kind "sample"' in template and "Sample connector" in template
+print("PASS: 40 unique resources (18 apps + 6 sample connectors + 16 documentation pages), 8 categories")
