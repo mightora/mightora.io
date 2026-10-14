@@ -17,7 +17,7 @@ Explore the live Mightora applications, grouped by what they help you do.
 
 {{< tool-hub >}}
 
-## Original Power Platform documentation
+## Power Platform documentation
 
 ## Explore
 

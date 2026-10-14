@@ -6,7 +6,7 @@
       <p class="mt-eyebrow"><span class="mt-pulse" aria-hidden="true"></span> FREE TOOLS FOR CURIOUS MAKERS</p>
       <h1 id="mt-hero-title">Unleash the might of <em>automation.</em></h1>
       <p class="mt-hero-lead">Explore practical tools for building, debugging, visualising and sharing. Made for the Power Platform community and beyond.</p>
-      <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#mt-original">Original Power Platform tools <span aria-hidden="true">↓</span></a></div>
+      <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#mt-platform-resources">Power Platform resources <span aria-hidden="true">↓</span></a></div>
       <p class="mt-hero-stat">17 standalone applications <span aria-hidden="true">•</span> 6 collections <span aria-hidden="true">•</span> Free to explore</p>
     </div>
     <div class="mt-hero-art" aria-hidden="true">
@@ -20,6 +20,42 @@
         <g transform="rotate(10 491 395)"><rect x="440" y="341" width="105" height="107" rx="20" fill="#0b3242" stroke="#7dd3fc" stroke-width="2"/><path d="M465 412V381M489 412V368M513 412V390" stroke="#34d399" stroke-width="13" stroke-linecap="round"/></g>
       </svg>
     </div>
+  </section>
+
+
+  <section class="mt-pillars" aria-labelledby="mt-pillars-title">
+    <div class="mt-pillars-heading">
+      <p class="mt-pillars-kicker">FIND WHAT YOU NEED</p>
+      <h2 id="mt-pillars-title">Mightora Developer Tools</h2>
+      <p>One catalogue. Consistent branding. Practical tools for every stage of development.</p>
+    </div>
+    <div class="mt-pillars-grid">
+      <a class="mt-pillar" href="#power-platform" aria-label="Explore building and development tools">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13-11 11 11 11M32 13l11 11-11 11M29 9 19 39"/></svg>
+        <strong>Build</strong>
+        <span>Expressions, FetchXML, Web API, PCF</span>
+        <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
+      </a>
+      <a class="mt-pillar" href="#diagnostics" aria-label="Explore inspection and diagnostic tools">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6H8v7M33 6h7v7M15 42H8v-7M33 42h7v-7"/><circle cx="22" cy="23" r="9"/><path d="m29 30 10 10"/></svg>
+        <strong>Inspect</strong>
+        <span>Solutions, flows, traces, HAR</span>
+        <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
+      </a>
+      <a class="mt-pillar" href="#architecture" aria-label="Explore architecture and planning tools">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="5" width="14" height="12" rx="3"/><rect x="3" y="32" width="14" height="12" rx="3"/><rect x="31" y="32" width="14" height="12" rx="3"/><path d="M24 17v8H10v7m14-7h14v7"/></svg>
+        <strong>Architect</strong>
+        <span>Security, dependencies, diagrams</span>
+        <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
+      </a>
+      <a class="mt-pillar" href="#mt-platform-resources" aria-label="Explore deployment, ALM and pipeline tooling">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 31C9 30 6 34 5 43c9-1 13-4 12-11M19 28c7-15 13-18 24-23-1 11-7 25-23 30l-7-7Z"/><circle cx="30" cy="18" r="4"/><path d="m14 35-7 6"/></svg>
+        <strong>Deploy</strong>
+        <span>ALM, settings, solution comparison</span>
+        <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
+      </a>
+    </div>
+    <p class="mt-pillars-footnote">Independent tools and open Power Platform resources — all part of the Mightora family.</p>
   </section>
 
   <nav class="mt-jump" id="mt-categories" aria-label="Tool categories"><strong>EXPLORE BY TYPE</strong>{{ range $hub.groups }}<a href="#{{ .id }}">{{ .title }} <span aria-hidden="true">↗</span></a>{{ end }}</nav>
@@ -47,10 +83,10 @@
     {{ end }}</div>
   </section>
   {{ end }}
-  <section id="mt-original" class="mt-original" aria-labelledby="mt-original-title">
-    <p class="mt-overline">THE ORIGINAL COLLECTION</p>
-    <h2 id="mt-original-title">Power Platform connectors, controls & extensions</h2>
-    <p>All 16 existing tools remain available with their documentation and resources.</p>
+  <section id="mt-platform-resources" class="mt-original" aria-labelledby="mt-original-title">
+    <p class="mt-overline">POWER PLATFORM TOOLKIT</p>
+    <h2 id="mt-original-title">Connectors, controls & extensions</h2>
+    <p>Extend, automate and deliver with 16 documented Power Platform connectors, PCF controls, templates and DevOps extensions.</p>
     <div class="mt-original-grid">{{ range $hub.legacy }}
       <div><h3>{{ .title }}</h3><ul>{{ range .items }}<li><a href="{{ .url }}">{{ .name }} <span aria-hidden="true">↗</span></a></li>{{ end }}</ul></div>
     {{ end }}</div>

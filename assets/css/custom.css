@@ -167,3 +167,58 @@ mightora-header .mobile-menu-btn i{display:none;}
 @media(max-width:850px){.mt-hero{grid-template-columns:1fr;}.mt-hero-art{max-width:510px;margin:-60px auto -20px;}.mt-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.mt-original-grid{grid-template-columns:repeat(2,1fr);}.mt-group-count{display:none;}}
 @media(max-width:600px){.mt-hub{padding:0 13px 50px;}.mt-hero{margin:15px 0;border-radius:18px;}.mt-hero-copy{padding:30px 24px 10px;}.mt-hero h1{font-size:2.5rem!important;}.mt-hero-art{margin:-35px 0 -18px;}.mt-btn{width:100%;}.mt-jump strong{width:100%;}.mt-group-head{align-items:flex-start;}.mt-category-icon{width:54px;height:54px;}.mt-category-icon svg{width:33px;height:33px;}.mt-tool-grid{grid-template-columns:1fr;}.mt-tool{min-height:170px;}.mt-tool-meta{margin-bottom:12px;}.mt-original-grid{grid-template-columns:1fr;}.mt-original{padding:22px;}.mt-contribute{display:block;}.mt-contribute .mt-btn{margin-top:19px;}}
 @media(prefers-reduced-motion:reduce){.mt-tool,.mt-btn{transition:none;}.mt-tool:hover,.mt-btn:hover{transform:none;}}
+
+/* ── Developer journey navigation: four clear, tactile cards ── */
+.mt-pillars{max-width:1050px;margin:30px auto 42px;padding:21px;border:1px solid var(--border,#e5e7eb);border-radius:24px;background:var(--bg-card,#fff);}
+.mt-pillars-heading{padding:27px 29px 25px;border-radius:18px;background:#1b252e;color:#fff;text-align:center;}
+.mt-pillars-heading .mt-pillars-kicker{color:#6ee7b7!important;font-size:.7rem!important;font-weight:800!important;letter-spacing:.15em;margin:0 0 10px!important;}
+.mt-pillars-heading h2{color:#fff!important;font-size:clamp(1.45rem,3.5vw,2.2rem)!important;font-weight:800!important;margin:0 0 8px!important;letter-spacing:-.035em;}
+.mt-pillars-heading p:not(.mt-pillars-kicker){color:#cbd5e1!important;font-size:.96rem!important;line-height:1.6!important;margin:0!important;}
+.mt-pillars-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0 0;}
+.mt-pillar{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:13px;min-height:210px;padding:26px 27px;border-radius:18px;background:#232a30;color:#f8fafc!important;text-decoration:none!important;border:1px solid #33444b;transition:transform .18s,background .18s,border-color .18s;}
+.mt-pillar:hover{background:#1b3939;border-color:#34d399;transform:translateY(-3px);}
+.mt-pillar svg{width:28px;height:28px;flex:none;color:#a7f3d0;}
+.mt-pillar strong{font-size:1.55rem;letter-spacing:-.045em;line-height:1.2;}
+.mt-pillar>span:not(.mt-pillar-arrow){color:#cbd5e1;line-height:1.5;font-size:1rem;max-width:250px;flex:1;}
+.mt-pillar-arrow{font-size:.79rem;font-weight:800;color:#91e9c2;opacity:0;transition:opacity .16s;}
+.mt-pillar:hover .mt-pillar-arrow,.mt-pillar:focus-visible .mt-pillar-arrow{opacity:1;}
+.mt-pillars-footnote{text-align:center;color:var(--text-muted,#6b7280)!important;font-size:.85rem!important;padding:20px 10px 3px;margin:0!important;}
+
+/* ── Compact author panel: no oversized background-image banner ── */
+.mt-author-wrapper{max-width:1160px;margin:40px auto 24px;padding:0 22px;}
+.mt-author-wrapper mightora-author.author-section,
+.mt-author-wrapper mightora-author{display:block!important;width:100%;background:#111e29!important;background-image:none!important;border:1px solid #2b4d50;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px rgba(4,21,26,.13);}
+.mt-author-wrapper mightora-author .author-section-overlay{background:radial-gradient(circle at 9% 50%,rgba(16,185,129,.16),transparent 33%),linear-gradient(115deg,#0d1a26,#182d33)!important;padding:30px 34px!important;}
+.mt-author-wrapper mightora-author .author-section-inner{display:flex!important;flex-direction:row!important;align-items:center!important;gap:30px!important;text-align:left!important;max-width:1000px!important;margin:0 auto!important;min-width:0;}
+.mt-author-wrapper mightora-author .author-photos{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex-shrink:0;width:130px;}
+.mt-author-wrapper mightora-author .author-avatar{display:block;width:104px!important;height:104px!important;max-width:none;border-radius:50%;object-fit:cover;border:3px solid #a7f3d0;box-shadow:0 3px 18px rgba(0,0,0,.18);}
+.mt-author-wrapper mightora-author .author-blog-logo{width:auto!important;max-width:112px!important;max-height:42px!important;object-fit:contain;filter:none;}
+.mt-author-wrapper mightora-author .author-text{flex:1;min-width:0;}
+.mt-author-wrapper mightora-author .mt-author-eyebrow{color:#6ee7b7!important;letter-spacing:.13em;font-size:.66rem!important;font-weight:800!important;margin:0 0 5px!important;}
+.mt-author-wrapper mightora-author .author-heading{color:#fff!important;font-size:1.45rem!important;line-height:1.3!important;margin:0 0 9px!important;font-weight:800!important;}
+.mt-author-wrapper mightora-author .author-bio{color:#d4e4ea!important;font-size:.91rem!important;line-height:1.7!important;max-width:760px;margin:0 0 16px!important;}
+.mt-author-wrapper mightora-author .author-bio strong{color:#fff!important;}
+.mt-author-wrapper mightora-author .author-links{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-start!important;}
+.mt-author-wrapper mightora-author a.author-link{display:inline-flex;align-items:center;min-height:35px;padding:7px 13px;border:1px solid #547b7d;border-radius:8px;color:#d1fae5!important;background:rgba(16,185,129,.10)!important;font-size:.82rem!important;font-weight:750!important;text-decoration:none!important;}
+.mt-author-wrapper mightora-author a.author-link:hover{background:rgba(16,185,129,.22)!important;border-color:#6ee7b7;}
+@media(max-width:600px){
+ .mt-pillars{padding:12px;border-radius:18px;margin:24px auto 35px;}
+ .mt-pillars-heading{padding:23px 14px;border-radius:13px;}
+ .mt-pillars-grid{gap:10px;margin-top:10px;}
+ .mt-pillar{min-height:181px;padding:17px 15px;border-radius:14px;gap:12px;}
+ .mt-pillar svg{width:25px;height:25px;}
+ .mt-pillar strong{font-size:1.25rem;}
+ .mt-pillar>span:not(.mt-pillar-arrow){font-size:.8rem;line-height:1.4;}
+ .mt-pillar-arrow{opacity:1;font-size:.72rem;}
+ .mt-author-wrapper{padding:0 14px;margin:26px auto 20px;}
+ .mt-author-wrapper mightora-author .author-section-overlay{padding:24px 20px!important;}
+ .mt-author-wrapper mightora-author .author-section-inner{flex-direction:column!important;text-align:center!important;align-items:center!important;gap:17px!important;}
+ .mt-author-wrapper mightora-author .author-photos{flex-direction:row!important;gap:16px;width:auto;justify-content:center;}
+ .mt-author-wrapper mightora-author .author-avatar{width:82px!important;height:82px!important;}
+ .mt-author-wrapper mightora-author .author-blog-logo{max-width:97px!important;max-height:43px!important;}
+ .mt-author-wrapper mightora-author .author-text{text-align:center!important;}
+ .mt-author-wrapper mightora-author .author-heading{font-size:1.29rem!important;}
+ .mt-author-wrapper mightora-author .author-bio{font-size:.86rem!important;}
+ .mt-author-wrapper mightora-author .author-links{justify-content:center!important;}
+}
+@media(prefers-reduced-motion:reduce){.mt-pillar{transition:none;}.mt-pillar:hover{transform:none;}}

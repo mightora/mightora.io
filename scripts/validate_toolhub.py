@@ -14,3 +14,17 @@ for p in ('content/_index.md','content/tools/_index.md'):
  assert '{{< tool-hub >}}' in (root/p).read_text(),p
 assert (root/'data/footer.yaml').read_text()==(root/'static/footer.yaml').read_text()
 print('PASS: 17 external URLs, 6 categories, both pages and footer sync')
+
+h=(root/'layouts/shortcodes/tool-hub.html').read_text(encoding='utf8')
+for label in ('Build','Inspect','Architect','Deploy'):
+ assert f'<strong>{label}</strong>' in h, label
+assert 'THE ORIGINAL COLLECTION' not in h
+assert 'Original Power Platform tools' not in h
+assert 'id="mt-platform-resources"' in h
+for anchor in ('#power-platform','#diagnostics','#architecture','#mt-platform-resources'):
+ assert f'href="{anchor}"' in h, anchor
+footer=(root/'layouts/partials/footer.html').read_text(encoding='utf8')
+assert '<mightora-author>' in footer
+assert '<section class="mt-author-wrapper"' in footer
+assert 'author-avatar' in footer and 'author-blog-logo' in footer
+print('PASS: four developer journeys and responsive author component')
