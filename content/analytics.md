@@ -14,7 +14,13 @@ To achieve this, we track tool usage to understand how our community interacts w
 
 ## Your Privacy Matters
 
-We value your privacy. Usage tracking is limited to recording a hit on our Cloudflare hosted endpoint whenever a tool is accessed. No personal data or additional information is collected—just the essentials to help us improve.
+We use a basic tool-access counter and **Cloudflare Web Analytics** to understand which Mightora tools are useful and how our published websites perform.
+
+Cloudflare Web Analytics uses a privacy-focused browser beacon to collect website usage and performance information such as page views, popular paths, referrers, approximate country, browser/device type, and Core Web Vitals. **Cloudflare Web Analytics does not set cookies or use browser fingerprinting.** It is not configured to collect the content of files you analyse, code you paste, or data you enter into our local-first tools.
+
+The analytics beacon is only loaded on our hosted production websites. Downloaded/offline copies of our tools do not load the beacon. The traffic figures shown below are HTTP request counts from our existing metrics source; they are **not the same as unique visitors or Web Analytics page views**.
+
+For details, see [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics/).
 
 
 ## Analytics
