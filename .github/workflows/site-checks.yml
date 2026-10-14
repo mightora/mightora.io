@@ -15,6 +15,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 scripts/validate_toolhub.py
+      - name: Check client and Worker JavaScript syntax
+        run: |
+          node --check static/js/cloudflare-stats.js
+          node --check workers/cloudflare-traffic/src/index.mjs
       - name: Validate YAML
         run: |
           python3 -m pip install pyyaml

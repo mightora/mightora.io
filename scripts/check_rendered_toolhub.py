@@ -33,3 +33,10 @@ for page in (root / "public/index.html", root / "public/tools/index.html"):
         f"unexpected {set(parser.urls) - set(expected)}"
     )
     print(f"PASS: {page.relative_to(root)} has all 40 unique resource cards")
+
+# Only the homepage has high-level figures; the directory continues to use one catalogue.
+html = (root / "public/index.html").read_text(encoding="utf-8")
+figures = [int(x) for x in re.findall(r'class="mt-site-metric-number"[^>]*>(\\d+)<', html)]
+assert figures == [40, 18, 16, 6, 8], f"Unexpected derived homepage figures: {figures}"
+assert "mt-cloudflare-stats" not in html, "Cloudflare panel should be hidden until endpoint is configured"
+print("PASS: homepage has correct catalogue statistics and no unconfigured visitor data")

@@ -248,3 +248,31 @@ mightora-header .mobile-menu-btn i{display:none;}
   color:var(--accent,#059669);font-size:.67rem;font-weight:800;white-space:nowrap;}
 [data-theme="dark"] .mt-tool-kind,.dark .mt-tool-kind {background:rgba(52,211,153,.14);}
 @media(max-width:600px){.mt-tool-kind{font-size:.64rem;padding:3px 7px;}}
+
+
+/* Home page: suppress Hextra right-hand TOC, not the main header or docs navigation */
+body.mt-home-page .hextra-toc,
+body.mt-home-page .hextra-toc-container,
+body.mt-home-page aside[aria-label="On this page"],
+body.mt-home-page aside[aria-label="Table of contents"],
+body.mt-home-page .toc-container,
+body.mt-home-page .right-sidebar {display:none!important;}
+body.mt-home-page .mt-landing,body.mt-home-page main#main-content{width:100%;max-width:none;margin:0 auto;}
+.mt-site-metrics{margin:30px 0 36px;}
+.mt-site-metrics-head{margin-bottom:16px;}
+.mt-site-metrics-head h2,.mt-cloudflare-stats h2{font-size:clamp(1.18rem,2.4vw,1.65rem)!important;font-weight:800!important;letter-spacing:-.035em;margin:0!important;color:var(--text,#111827)!important;}
+.mt-site-metrics-head .mt-overline,.mt-cloudflare-stats .mt-overline{color:var(--accent,#059669)!important;font-size:.71rem!important;letter-spacing:.13em;font-weight:850;margin:0 0 4px!important;}
+.mt-site-metrics-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;}
+.mt-site-metric{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:112px;padding:17px 19px;background:var(--bg-card,#fff);border:1px solid var(--border,#e5e7eb);border-radius:16px;box-shadow:0 3px 14px rgba(3,37,34,.04);}
+.mt-site-metric-number{color:var(--accent,#059669);font-size:clamp(1.8rem,3vw,2.35rem);font-weight:850;font-variant-numeric:tabular-nums;line-height:1.2;letter-spacing:-.04em;}
+.mt-site-metric-label{color:var(--text-muted,#6b7280);font-size:.8rem;font-weight:650;margin-top:7px;line-height:1.4;}
+.mt-cloudflare-stats{margin:0 0 35px;border:1px solid var(--border,#e5e7eb);border-radius:17px;padding:19px 22px;background:var(--bg-card,#fff);}
+.mt-cloudflare-stats-heading{display:flex;gap:16px;align-items:center;justify-content:space-between;}
+.mt-cloudflare-note{font-size:.77rem;color:var(--text-muted,#6b7280);}
+.mt-cloudflare-stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;margin-top:18px;}
+.mt-cloudflare-stats-grid>div{display:flex;flex-direction:column;gap:5px;}
+.mt-cloudflare-value{font-weight:800;font-size:1.8rem;font-variant-numeric:tabular-nums;color:var(--text,#111827);}
+.mt-cloudflare-label{color:var(--text-muted,#6b7280);font-size:.79rem;font-weight:650;}
+.mt-cloudflare-footnote{color:var(--text-muted,#6b7280)!important;font-size:.72rem!important;margin:16px 0 0!important;}
+@media(max-width:920px){.mt-site-metrics-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:600px){.mt-site-metrics{margin:22px 0 30px;}.mt-site-metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}.mt-site-metric{min-height:94px;padding:13px 15px;}.mt-site-metric-number{font-size:1.9rem;}.mt-cloudflare-stats{padding:16px;}.mt-cloudflare-stats-heading{display:block;}.mt-cloudflare-note{display:block;margin-top:9px;}.mt-cloudflare-stats-grid{gap:13px;}}

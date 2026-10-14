@@ -23,3 +23,9 @@ The **Power Automate & connectors** category also includes the public **Custom C
 The six routes follow `CONNECTORS[].id` from `mightora/custom-connector-builder/src/main.js`: `regex-tester`, `markdown-html-converter`, `compare-json-lists`, `business-rules-calculator`, `pricing-calculator`, and `json-calculation-engine`.
 
 When new sample connectors are added to the builder, update this catalogue and the allowlist checks in `scripts/validate_toolhub.py` together.
+
+## Homepage at a glance and Cloudflare analytics
+
+The homepage hides only its right-side Hextra table-of-contents panel; documentation pages retain their navigation. The five headline metrics are generated from `data/toolhub.yaml` at build time (currently 40 resources, 18 standalone browser apps, 16 documented utilities, 6 sample connectors and 8 categories). The homepage figure checks fail the build if the counts become inconsistent.
+
+Cloudflare Web Analytics is already installed on the site. However, live Cloudflare visitor data cannot be fetched with an API token directly from GitHub Pages. An optional read-only, cached Worker is provided in `workers/cloudflare-traffic/`. Until an Analytics Read token is securely stored as a Worker secret and `params.cloudflareStats.endpoint` is configured in `hugo.yaml`, no visitor counts appear. See the Worker README for setup, data boundaries and privacy controls. Neither the Cloudflare API token nor arbitrary analytics records are exposed publicly.

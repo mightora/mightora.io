@@ -23,6 +23,46 @@
   </section>
 
 
+  {{- if .Page.IsHome }}
+  {{- $resources := 0 }}{{- $apps := 0 }}{{- $docs := 0 }}{{- $samples := 0 }}
+  {{- range $hub.groups }}
+    {{- range .tools }}
+      {{- $resources = add $resources 1 }}
+      {{- if eq .kind "sample" }}
+        {{- $samples = add $samples 1 }}
+      {{- else if hasPrefix .url "https://" }}
+        {{- $apps = add $apps 1 }}
+      {{- else }}
+        {{- $docs = add $docs 1 }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  <section class="mt-site-metrics" aria-label="Mightora at a glance">
+    <div class="mt-site-metrics-head"><p class="mt-overline">MIGHTORA AT A GLANCE</p><h2>Tools for every stage of delivery</h2></div>
+    <div class="mt-site-metrics-grid">
+      <div class="mt-site-metric"><span class="mt-site-metric-number">{{ $resources }}</span><span class="mt-site-metric-label">Tools &amp; examples</span></div>
+      <div class="mt-site-metric"><span class="mt-site-metric-number">{{ $apps }}</span><span class="mt-site-metric-label">Browser apps</span></div>
+      <div class="mt-site-metric"><span class="mt-site-metric-number">{{ $docs }}</span><span class="mt-site-metric-label">Documented utilities</span></div>
+      <div class="mt-site-metric"><span class="mt-site-metric-number">{{ $samples }}</span><span class="mt-site-metric-label">Sample connectors</span></div>
+      <div class="mt-site-metric"><span class="mt-site-metric-number">{{ len $hub.groups }}</span><span class="mt-site-metric-label">Tool categories</span></div>
+    </div>
+  </section>
+  {{- with site.Params.cloudflareStats.endpoint }}
+  <section class="mt-cloudflare-stats" data-cloudflare-stats-url="{{ . | safeURL }}" aria-label="Cloudflare Web Analytics visitor statistics">
+    <div class="mt-cloudflare-stats-heading">
+      <div><p class="mt-overline">CLOUDFLARE WEB ANALYTICS</p><h2>Community visits</h2></div>
+      <span class="mt-cloudflare-note" data-cloudflare-status role="status" aria-live="polite">Loading recent traffic…</span>
+    </div>
+    <div class="mt-cloudflare-stats-grid">
+      <div><span class="mt-cloudflare-value" data-cloudflare-pageviews>—</span><span class="mt-cloudflare-label">Page views · last 24 hours</span></div>
+      <div><span class="mt-cloudflare-value" data-cloudflare-visits>—</span><span class="mt-cloudflare-label">Visits · last 24 hours</span></div>
+    </div>
+    <p class="mt-cloudflare-footnote">Cloudflare browser analytics. Cached figures, not a live visitor counter. <time data-cloudflare-updated></time></p>
+  </section>
+  <script src="/js/cloudflare-stats.js" defer></script>
+  {{- end }}
+  {{- end }}
+
   <section class="mt-pillars" aria-labelledby="mt-pillars-title">
     <div class="mt-pillars-heading">
       <p class="mt-pillars-kicker">FIND WHAT YOU NEED</p>

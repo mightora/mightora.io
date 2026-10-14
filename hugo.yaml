@@ -56,6 +56,9 @@ sidebar:
       weight: 7
 
 params:
+  # Enter the read-only Cloudflare Worker URL only after secure configuration.
+  cloudflareStats:
+    endpoint: ""
   navbar:
     displayTitle: false
     displayLogo: true

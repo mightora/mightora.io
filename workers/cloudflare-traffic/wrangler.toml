@@ -1,0 +1,6 @@
+name = "mightora-public-traffic"
+main = "src/index.mjs"
+compatibility_date = "2026-10-14"
+workers_dev = true
+
+# Keep all Analytics API credentials/identifiers as Worker secrets, not public vars.
