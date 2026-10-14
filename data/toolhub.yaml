@@ -49,6 +49,33 @@ groups:
       - name: "Expression Lab"
         url: https://expression-lab.mightora.io/
         description: "Explore Power Automate expressions."
+      - name: "Custom Connector Builder"
+        url: https://custom-connector-builder.mightora.io/
+        description: "Generate Power Platform custom connector prompts and C# policy code examples."
+      - name: "Regex Tester"
+        url: https://custom-connector-builder.mightora.io/#/connector/regex-tester
+        description: "Test text against a supplied regex and inspect the first match."
+        kind: sample
+      - name: "Markdown / HTML Converter"
+        url: https://custom-connector-builder.mightora.io/#/connector/markdown-html-converter
+        description: "Sample bidirectional Markdown and HTML conversion connector."
+        kind: sample
+      - name: "Compare JSON Lists"
+        url: https://custom-connector-builder.mightora.io/#/connector/compare-json-lists
+        description: "Compare JSON arrays, including duplicates, matches and differences."
+        kind: sample
+      - name: "Business Rules Calculator"
+        url: https://custom-connector-builder.mightora.io/#/connector/business-rules-calculator
+        description: "Explore a combined pricing and scoring rules connector example."
+        kind: sample
+      - name: "Pricing Calculator"
+        url: https://custom-connector-builder.mightora.io/#/connector/pricing-calculator
+        description: "Apply pricing rules and return an audit trail of adjustments."
+        kind: sample
+      - name: "JSON Calculation Engine"
+        url: https://custom-connector-builder.mightora.io/#/connector/json-calculation-engine
+        description: "Run sequential calculations over JSON rows and produce totals."
+        kind: sample
       - name: "Calculate Working Day"
         url: /tools/power-automate-connectors/calculate-working-day/
         description: "Calculate working days in Power Automate."

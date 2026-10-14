@@ -241,3 +241,10 @@ mightora-header .mobile-menu-btn i{display:none;}
   .mt-jump { margin: 0 -13px; padding: 12px 13px 15px; }
   .mt-group { scroll-margin-top: 120px; }
 }
+
+/* Sample connectors are distinct learning resources, but stay in the unified tool grid. */
+.mt-tool-kind {margin-left:auto;margin-right:10px;padding:3px 9px;border-radius:100px;
+  background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.23);
+  color:var(--accent,#059669);font-size:.67rem;font-weight:800;white-space:nowrap;}
+[data-theme="dark"] .mt-tool-kind,.dark .mt-tool-kind {background:rgba(52,211,153,.14);}
+@media(max-width:600px){.mt-tool-kind{font-size:.64rem;padding:3px 7px;}}

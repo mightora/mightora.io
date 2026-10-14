@@ -7,7 +7,7 @@ import re
 root = Path(__file__).resolve().parents[1]
 source = (root / "data/toolhub.yaml").read_text(encoding="utf-8")
 expected = re.findall(r"^        url:\s+(\S+)\s*$", source, re.M)
-assert len(expected) == 33
+assert len(expected) == 40
 
 class ToolCards(HTMLParser):
     def __init__(self):
@@ -32,4 +32,4 @@ for page in (root / "public/index.html", root / "public/tools/index.html"):
         f"{page}: missing {set(expected) - set(parser.urls)}, "
         f"unexpected {set(parser.urls) - set(expected)}"
     )
-    print(f"PASS: {page.relative_to(root)} has all 33 unique tool cards")
+    print(f"PASS: {page.relative_to(root)} has all 40 unique resource cards")

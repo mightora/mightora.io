@@ -7,7 +7,7 @@
       <h1 id="mt-hero-title">Unleash the might of <em>automation.</em></h1>
       <p class="mt-hero-lead">Explore practical tools for building, debugging, visualising and sharing. Made for the Power Platform community and beyond.</p>
       <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#power-automate">Power Automate & connectors <span aria-hidden="true">↓</span></a></div>
-      <p class="mt-hero-stat">33 tools <span aria-hidden="true">•</span> 8 categories <span aria-hidden="true">•</span> Free to explore</p>
+      <p class="mt-hero-stat">40 tools &amp; samples <span aria-hidden="true">•</span> 8 categories <span aria-hidden="true">•</span> Free to explore</p>
     </div>
     <div class="mt-hero-art" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 510" fill="none">
@@ -55,7 +55,7 @@
         <span class="mt-pillar-arrow" aria-hidden="true">Explore →</span>
       </a>
     </div>
-    <p class="mt-pillars-footnote">33 tools spanning browser apps, connectors, PCF controls, templates and DevOps extensions.</p>
+    <p class="mt-pillars-footnote">40 tools and samples spanning browser apps, connectors, PCF controls, templates and DevOps extensions.</p>
   </section>
 
   <nav class="mt-jump" id="mt-categories" aria-label="Tool categories"><strong>EXPLORE BY TYPE</strong>{{ range $hub.groups }}<a href="#{{ .id }}">{{ .title }} <span aria-hidden="true">↗</span></a>{{ end }}</nav>
@@ -80,8 +80,8 @@
     <div class="mt-tool-grid">{{ range .tools }}
       {{ $external := hasPrefix .url "https://" }}
       <a class="mt-tool" href="{{ .url | safeURL }}" {{ if $external }}target="_blank" rel="noopener noreferrer" aria-label="Open {{ .name }} in a new tab"{{ else }}aria-label="View {{ .name }} documentation"{{ end }}>
-        <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span><span class="mt-outbound" aria-hidden="true">↗</span></div>
-        <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">{{ if $external }}Open tool{{ else }}Explore tool{{ end }} <span aria-hidden="true">→</span></span>
+        <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span>{{ if eq .kind "sample" }}<span class="mt-tool-kind">Sample connector</span>{{ end }}<span class="mt-outbound" aria-hidden="true">↗</span></div>
+        <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">{{ if eq .kind "sample" }}Explore sample{{ else if $external }}Open tool{{ else }}Explore tool{{ end }} <span aria-hidden="true">→</span></span>
       </a>
     {{ end }}</div>
   </section>
