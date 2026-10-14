@@ -11,6 +11,14 @@ Discover a curated selection of powerful tools designed to streamline your workf
 
 Our tools are specifically designed to empower users of the Microsoft Power Platform, including Power Automate and Power Apps. Whether you're a seasoned developer or just starting your journey, these tools will help you optimize your pipelines, automate repetitive tasks, and enhance your Power Platform solutions. From managing Dataverse for Teams to integrating advanced DevOps capabilities, our tools are tailored to meet the diverse needs of Power Platform enthusiasts and professionals.
 
+## New browser-based tools
+
+Explore the live Mightora applications, grouped by what they help you do.
+
+{{< tool-hub >}}
+
+## Original Power Platform documentation
+
 ## Explore
 
 {{< cards >}}

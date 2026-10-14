@@ -1,0 +1,53 @@
+# Source of truth for the public footer. Both data/footer.yaml and static/footer.yaml must match.
+brands:
+  - name: "mightora.io"
+    url: "https://mightora.io"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png"
+    description: "Free tools for the community"
+  - name: "Tech Tweedie"
+    url: "https://techtweedie.github.io"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/TechTweedie_bw.png"
+    description: "Technical blog and tutorials"
+  - name: "Tweed.technology"
+    url: "https://tweed.technology"
+    logo: "https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/tweedTechnologyLogoLight.png"
+    description: "Technology consulting"
+sections:
+  - title: "Tool categories"
+    column: 1
+    position: 1
+    links:
+      - {name: "Power BI & analytics", url: "/#power-bi"}
+      - {name: "Power Platform", url: "/#power-platform"}
+      - {name: "Debugging & diagnostics", url: "/#diagnostics"}
+      - {name: "Architecture & planning", url: "/#architecture"}
+      - {name: "Presentation & engagement", url: "/#engagement"}
+      - {name: "Connectivity", url: "/#connectivity"}
+  - title: "Power Platform resources"
+    column: 2
+    position: 1
+    links:
+      - {name: "All tools", url: "/tools/"}
+      - {name: "Pipeline extensions", url: "/tools/cicd/"}
+      - {name: "Power Automate connectors", url: "/tools/power-automate-connectors/"}
+      - {name: "Power Automate templates", url: "/tools/power-automate-templates/"}
+      - {name: "PCF controls", url: "/tools/pcf/"}
+      - {name: "Developer scripts", url: "/tools/developer/"}
+  - title: "Mightora"
+    column: 3
+    position: 1
+    links:
+      - {name: "About", url: "/about/"}
+      - {name: "FAQ", url: "/faq/"}
+      - {name: "Privacy", url: "/privacy/"}
+      - {name: "Analytics", url: "/analytics/"}
+      - {name: "GitHub", url: "https://github.com/mightora"}
+      - {name: "Status", url: "https://stats.uptimerobot.com/3EPW8gBu4N"}
+  - title: "Community"
+    column: 3
+    position: 2
+    links:
+      - {name: "TechTweedie blog", url: "https://techtweedie.github.io"}
+      - {name: "YouTube", url: "https://youtube.com/@techtweedie"}
+      - {name: "LinkedIn", url: "https://go.iantweedie.biz/LinkedIn-Linktree"}
+      - {name: "Contact", url: "https://iantweedie.biz"}

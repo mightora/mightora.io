@@ -1,0 +1,25 @@
+name: Site catalogue checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/validate_toolhub.py
+      - name: Validate YAML
+        run: |
+          python3 -m pip install pyyaml
+          python3 - <<'PY'
+          import yaml
+          for p in ['data/toolhub.yaml','data/footer.yaml','static/footer.yaml','hugo.yaml']:
+              with open(p,encoding='utf8') as f: assert yaml.safe_load(f)
+          PY

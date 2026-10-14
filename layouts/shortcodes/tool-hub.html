@@ -1,0 +1,59 @@
+
+{{- $hub := site.Data.toolhub -}}
+<div class="mt-hub">
+  <section class="mt-hero" aria-labelledby="mt-hero-title">
+    <div class="mt-hero-copy">
+      <p class="mt-eyebrow"><span class="mt-pulse" aria-hidden="true"></span> FREE TOOLS FOR CURIOUS MAKERS</p>
+      <h1 id="mt-hero-title">Unleash the might of <em>automation.</em></h1>
+      <p class="mt-hero-lead">Explore practical tools for building, debugging, visualising and sharing. Made for the Power Platform community and beyond.</p>
+      <div class="mt-actions"><a class="mt-btn mt-primary" href="#mt-categories">Explore tools <span aria-hidden="true">↗</span></a><a class="mt-btn mt-outline" href="#mt-original">Original Power Platform tools <span aria-hidden="true">↓</span></a></div>
+      <p class="mt-hero-stat">17 standalone applications <span aria-hidden="true">•</span> 6 collections <span aria-hidden="true">•</span> Free to explore</p>
+    </div>
+    <div class="mt-hero-art" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 510" fill="none">
+        <defs><linearGradient id="mtPanel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#143b44"/><stop offset="1" stop-color="#0b1726"/></linearGradient><linearGradient id="mtLine" x1="0" y1="0" x2="1"><stop stop-color="#34d399"/><stop offset="1" stop-color="#67e8f9"/></linearGradient></defs>
+        <g opacity=".12" stroke="#6ee7b7"><path d="M0 60H590M0 110H590M0 160H590M0 210H590M0 260H590M0 310H590M0 360H590M0 410H590M0 460H590M45 0V510M95 0V510M145 0V510M195 0V510M245 0V510M295 0V510M345 0V510M395 0V510M445 0V510M495 0V510M545 0V510"/></g>
+        <path d="M81 145H174M408 122H519V210M93 370H177M406 326H511V412" stroke="#34d399" stroke-width="3" stroke-dasharray="7 9" opacity=".7"/>
+        <circle cx="81" cy="145" r="6" fill="#6ee7b7"/><circle cx="519" cy="210" r="6" fill="#6ee7b7"/><circle cx="93" cy="370" r="6" fill="#7dd3fc"/><circle cx="511" cy="412" r="6" fill="#6ee7b7"/>
+        <g transform="translate(130 90) rotate(-4 175 160)"><rect x="12" y="15" width="355" height="318" rx="24" fill="#050e19" opacity=".5"/><rect width="355" height="318" rx="24" fill="url(#mtPanel)" stroke="#33877e" stroke-width="2"/><path d="M0 53H355" stroke="#557a7d"/><circle cx="27" cy="27" r="6" fill="#fb7185"/><circle cx="49" cy="27" r="6" fill="#fbbf24"/><circle cx="71" cy="27" r="6" fill="#34d399"/><rect x="111" y="17" width="177" height="19" rx="10" fill="#234953"/><rect x="24" y="78" width="126" height="211" rx="12" fill="#0e2934" stroke="#315963"/><path d="M44 110H120M44 133H102M44 181H120M44 204H104M44 251H119" stroke="#6ee7b7" stroke-opacity=".8" stroke-width="8" stroke-linecap="round"/><rect x="174" y="78" width="155" height="96" rx="12" fill="#173b48" stroke="#286f69"/><path d="M192 145L221 117L245 133L278 95L310 109" stroke="url(#mtLine)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="174" y="192" width="155" height="97" rx="12" fill="#15333d" stroke="#406673"/><path d="M196 239L215 220L232 239L215 257Z" stroke="#7dd3fc" stroke-width="5"/><path d="M249 233H307M249 249H290" stroke="#7dd3fc" stroke-width="5" stroke-linecap="round"/></g>
+        <g transform="rotate(-11 95 115)"><rect x="40" y="60" width="110" height="108" rx="20" fill="#073632" stroke="#34d399" stroke-width="2"/><path d="M67 116L86 135L120 91" stroke="#6ee7b7" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g transform="rotate(10 491 395)"><rect x="440" y="341" width="105" height="107" rx="20" fill="#0b3242" stroke="#7dd3fc" stroke-width="2"/><path d="M465 412V381M489 412V368M513 412V390" stroke="#34d399" stroke-width="13" stroke-linecap="round"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <nav class="mt-jump" id="mt-categories" aria-label="Tool categories"><strong>EXPLORE BY TYPE</strong>{{ range $hub.groups }}<a href="#{{ .id }}">{{ .title }} <span aria-hidden="true">↗</span></a>{{ end }}</nav>
+  {{ range $hub.groups }}
+  <section id="{{ .id }}" class="mt-group" aria-labelledby="{{ .id }}-title">
+    <div class="mt-group-head">
+      <div class="mt-category-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="43" height="43" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          {{ if eq .icon "chart" }}<rect x="5" y="7" width="38" height="34" rx="7"/><path d="M13 32V24M21 32V16M29 32V21M37 32V12" stroke-width="4"/>
+          {{ else if eq .icon "flow" }}<rect x="4" y="16" width="14" height="15" rx="3"/><rect x="30" y="5" width="14" height="15" rx="3"/><rect x="30" y="28" width="14" height="15" rx="3"/><path d="M18 23H24V12H30M24 23V35H30"/>
+          {{ else if eq .icon "debug" }}<rect x="5" y="6" width="31" height="29" rx="6"/><path d="M13 16H28M13 23H24"/><circle cx="30" cy="30" r="9"/><path d="M37 37L44 44"/>
+          {{ else if eq .icon "map" }}<rect x="17" y="4" width="14" height="12" rx="3"/><rect x="3" y="32" width="14" height="12" rx="3"/><rect x="31" y="32" width="14" height="12" rx="3"/><path d="M24 16V24M10 32V24H38V32"/>
+          {{ else if eq .icon "present" }}<rect x="5" y="5" width="38" height="29" rx="4"/><path d="M24 34V43M16 43H32M13 25L21 16L27 21L35 12"/>
+          {{ else }}<circle cx="15" cy="24" r="9"/><circle cx="33" cy="24" r="9"/><path d="M18 20L30 28M18 28L30 20"/>{{ end }}
+        </svg>
+      </div>
+      <div><p class="mt-overline">DISCOVER & CREATE</p><h2 id="{{ .id }}-title">{{ .title }}</h2><p>{{ .description }}</p></div>
+      <span class="mt-group-count">{{ len .tools }} tools</span>
+    </div>
+    <div class="mt-tool-grid">{{ range .tools }}
+      <a class="mt-tool" href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ .name }} in a new tab">
+        <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span><span class="mt-outbound" aria-hidden="true">↗</span></div>
+        <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">Open tool <span aria-hidden="true">→</span></span>
+      </a>
+    {{ end }}</div>
+  </section>
+  {{ end }}
+  <section id="mt-original" class="mt-original" aria-labelledby="mt-original-title">
+    <p class="mt-overline">THE ORIGINAL COLLECTION</p>
+    <h2 id="mt-original-title">Power Platform connectors, controls & extensions</h2>
+    <p>All 16 existing tools remain available with their documentation and resources.</p>
+    <div class="mt-original-grid">{{ range $hub.legacy }}
+      <div><h3>{{ .title }}</h3><ul>{{ range .items }}<li><a href="{{ .url }}">{{ .name }} <span aria-hidden="true">↗</span></a></li>{{ end }}</ul></div>
+    {{ end }}</div>
+  </section>
+  <section class="mt-contribute"><div><p class="mt-overline">BUILD WITH THE COMMUNITY</p><h2>Useful by design. Open to improvement.</h2><p>Explore the source and suggest improvements through GitHub.</p></div><a class="mt-btn mt-primary" href="https://github.com/mightora" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a></section>
+</div>
