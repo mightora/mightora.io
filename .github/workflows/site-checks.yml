@@ -1,0 +1,55 @@
+name: Site catalogue checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/validate_toolhub.py
+      - name: Validate YAML
+        run: |
+          python3 -m pip install pyyaml
+          python3 - <<'PY'
+          import yaml
+          for p in ['data/toolhub.yaml','data/footer.yaml','static/footer.yaml','hugo.yaml']:
+              with open(p,encoding='utf8') as f: assert yaml.safe_load(f)
+          PY
+
+  build-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - name: Install Hugo Extended
+        run: |
+          wget -q -O "${{ runner.temp }}/hugo.deb" https://github.com/gohugoio/hugo/releases/download/v0.132.2/hugo_extended_0.132.2_linux-amd64.deb
+          sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+      - name: Run the production content processors
+        run: |
+          python3 .github/workflows/include_md.py .
+          python3 .github/workflows/update_cards.py .
+      - name: Verify Hugo build
+        run: hugo --gc --minify --baseURL "https://mightora.io/"
+      - name: Verify rendered public tool URLs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          page=(Path('public')/'index.html').read_text(encoding='utf8')
+          catalogue=Path('data/toolhub.yaml').read_text(encoding='utf8')
+          urls=re.findall(r'^\s+url: (https://[^\s]+)',catalogue,re.M)
+          missing=[u for u in urls if u not in page]
+          assert not missing,missing
+          print('Rendered homepage includes all 17 public tool links')
+          PY

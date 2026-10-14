@@ -1,0 +1,122 @@
+# Mightora public catalogue — maintained data, shared by homepage and /tools/.
+groups:
+  - id: power-bi
+    title: "Power BI & analytics"
+    icon: chart
+    description: "Explore, inspect and compare Power BI assets."
+    tools:
+      - name: "Power BI Diff"
+        url: https://power-bi-diff.mightora.io/
+        description: "Compare Power BI assets and spot changes."
+      - name: "Semantic Model"
+        url: https://semantic-model.mightora.io/
+        description: "Explore semantic-model structure."
+      - name: "Power BI Inspector"
+        url: https://powerbi-inspector.mightora.io/
+        description: "Inspect Power BI report components."
+      - name: "DAX"
+        url: https://dax.mightora.io/
+        description: "Work with DAX expressions."
+  - id: power-platform
+    title: "Power Platform development"
+    icon: flow
+    description: "Build queries, expressions, API requests and solutions."
+    tools:
+      - name: "Solution Explorer"
+        url: https://solution-explorer.mightora.io/
+        description: "Explore Dataverse solution components."
+      - name: "REST Builder"
+        url: https://rest.mightora.io/
+        description: "Build and inspect API requests."
+      - name: "FetchFlow"
+        url: https://fetchflow.mightora.io/
+        description: "Work with FetchXML queries."
+      - name: "Expression Lab"
+        url: https://expression-lab.mightora.io/
+        description: "Explore Power Automate expressions."
+  - id: diagnostics
+    title: "Debugging & diagnostics"
+    icon: debug
+    description: "Troubleshoot network issues and compare code."
+    tools:
+      - name: "HAR Analyzer"
+        url: https://har.mightora.io/
+        description: "Analyse browser HAR captures."
+      - name: "Code Diff"
+        url: https://code-diff.mightora.io/
+        description: "Compare code and web files."
+  - id: architecture
+    title: "Architecture & planning"
+    icon: map
+    description: "Communicate architecture and plan the future."
+    tools:
+      - name: "Architecture Lab"
+        url: https://architecture-lab.mightora.io/
+        description: "Create architecture diagrams."
+      - name: "Technology Radar"
+        url: https://radar.mightora.io/
+        description: "Visualise technology decisions."
+      - name: "Roadmaps"
+        url: https://roadmaps.mightora.io/
+        description: "Plan workstreams and dependencies."
+  - id: engagement
+    title: "Presentation & engagement"
+    icon: present
+    description: "Present, share and collect feedback."
+    tools:
+      - name: "QR Studio"
+        url: https://qr.mightora.io/
+        description: "Create and customise QR codes."
+      - name: "Slides Beta"
+        url: https://beta.slides.mightora.io/
+        description: "Create interactive presentations."
+      - name: "Feedback"
+        url: https://feedback.mightora.io/
+        description: "Collect presentation feedback."
+  - id: connectivity
+    title: "Connectivity & utilities"
+    icon: connect
+    description: "Quick utilities for getting connected."
+    tools:
+      - name: "Connect"
+        url: https://connect.mightora.io/
+        description: "Help with device connectivity and Wi-Fi setup."
+legacy:
+  - title: "DevOps & pipeline extensions"
+    items:
+      - name: "Commit to Repo"
+        url: /tools/cicd/commit-to-repo/
+      - name: "Dataverse 4 Teams Tools"
+        url: /tools/cicd/dataverse-4-teams-tools/
+      - name: "Power Platform Solution Modifier"
+        url: /tools/cicd/power-platform-solution-modifier/
+      - name: "Upload Markdown to Wiki"
+        url: /tools/cicd/upload-md-to-wiki/
+      - name: "Playwright for Power Platform"
+        url: /tools/cicd/playwright-for-power-platform/
+      - name: "Power Platform Documentation Extension"
+        url: /tools/cicd/power-platform-documentation-extension/
+  - title: "Power Automate"
+    items:
+      - name: "Calculate Working Day"
+        url: /tools/power-automate-connectors/calculate-working-day/
+      - name: "Email Domain Checker"
+        url: /tools/power-automate-connectors/email-domain-checker/
+      - name: "Multi Filter Array"
+        url: /tools/power-automate-connectors/multi-filter-array/
+      - name: "Proxy"
+        url: /tools/power-automate-connectors/proxy/
+      - name: "Send Email with Graph"
+        url: /tools/power-automate-connectors/send-email-with-graph/
+      - name: "SharePoint with Graph"
+        url: /tools/power-automate-connectors/sharepoint-with-graph/
+      - name: "Auto Tag DevOps Tickets into Emails"
+        url: /tools/power-automate-templates/auto-tag-devops-tickets-into-emails/
+  - title: "PCF & developer utilities"
+    items:
+      - name: "Calculate Elapsed Time"
+        url: /tools/pcf/calculate-elapsed-time/
+      - name: "iFrame with Split URL"
+        url: /tools/pcf/iframe-with-split-url/
+      - name: "Developer Tools Install Script"
+        url: /tools/developer/tools-quick-install/
