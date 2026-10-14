@@ -222,3 +222,22 @@ mightora-header .mobile-menu-btn i{display:none;}
  .mt-author-wrapper mightora-author .author-links{justify-content:center!important;}
 }
 @media(prefers-reduced-motion:reduce){.mt-pillar{transition:none;}.mt-pillar:hover{transform:none;}}
+
+/* Long unified catalogue: keep category navigation accessible without occupying multiple rows. */
+.mt-landing { overflow: visible !important; }
+.mt-jump {
+  position: sticky;
+  top: var(--header-h, 60px);
+  z-index: 35;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  background: var(--bg, #f9fafb);
+  border-bottom: 1px solid var(--border, #e5e7eb);
+}
+.mt-jump > strong, .mt-jump > a { flex-shrink: 0; white-space: nowrap; }
+.mt-group { scroll-margin-top: 128px; }
+@media (max-width:600px) {
+  .mt-jump { margin: 0 -13px; padding: 12px 13px 15px; }
+  .mt-group { scroll-margin-top: 120px; }
+}

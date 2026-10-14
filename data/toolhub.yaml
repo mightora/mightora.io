@@ -1,4 +1,5 @@
-# Mightora public catalogue — maintained data, shared by homepage and /tools/.
+# Single source of truth: every Mightora tool is grouped by purpose, not hosting type.
+# Use a public app URL for hosted apps, or an existing /tools/... page for documented tools.
 groups:
   - id: power-bi
     title: "Power BI & analytics"
@@ -20,7 +21,7 @@ groups:
   - id: power-platform
     title: "Power Platform development"
     icon: flow
-    description: "Build queries, expressions, API requests and solutions."
+    description: "Build with Dataverse, web APIs, PCF components and developer utilities."
     tools:
       - name: "Solution Explorer"
         url: https://solution-explorer.mightora.io/
@@ -31,13 +32,71 @@ groups:
       - name: "FetchFlow"
         url: https://fetchflow.mightora.io/
         description: "Work with FetchXML queries."
+      - name: "Calculate Elapsed Time"
+        url: /tools/pcf/calculate-elapsed-time/
+        description: "PCF control for showing elapsed time."
+      - name: "iFrame with Split URL"
+        url: /tools/pcf/iframe-with-split-url/
+        description: "PCF control for handling iframe URLs."
+      - name: "Developer Tools Install Script"
+        url: /tools/developer/tools-quick-install/
+        description: "Get useful developer tooling installed."
+  - id: power-automate
+    title: "Power Automate & connectors"
+    icon: automate
+    description: "Build expressions, work with connectors and discover ready-to-use templates."
+    tools:
       - name: "Expression Lab"
         url: https://expression-lab.mightora.io/
         description: "Explore Power Automate expressions."
+      - name: "Calculate Working Day"
+        url: /tools/power-automate-connectors/calculate-working-day/
+        description: "Calculate working days in Power Automate."
+      - name: "Email Domain Checker"
+        url: /tools/power-automate-connectors/email-domain-checker/
+        description: "Check email domains with a Power Automate connector."
+      - name: "Multi Filter Array"
+        url: /tools/power-automate-connectors/multi-filter-array/
+        description: "Filter arrays using multiple criteria."
+      - name: "Proxy"
+        url: /tools/power-automate-connectors/proxy/
+        description: "Explore the Proxy connector for Power Automate."
+      - name: "Send Email with Graph"
+        url: /tools/power-automate-connectors/send-email-with-graph/
+        description: "Send email via Microsoft Graph from a flow."
+      - name: "SharePoint with Graph"
+        url: /tools/power-automate-connectors/sharepoint-with-graph/
+        description: "Work with SharePoint through Microsoft Graph."
+      - name: "Auto Tag DevOps Tickets into Emails"
+        url: /tools/power-automate-templates/auto-tag-devops-tickets-into-emails/
+        description: "Power Automate template for linking DevOps tickets with emails."
+  - id: devops
+    title: "DevOps & ALM"
+    icon: rocket
+    description: "Automate pipelines, tests, documentation and solution delivery."
+    tools:
+      - name: "Commit to Repo"
+        url: /tools/cicd/commit-to-repo/
+        description: "Commit files into a Git repository from delivery pipelines."
+      - name: "Dataverse 4 Teams Tools"
+        url: /tools/cicd/dataverse-4-teams-tools/
+        description: "Explore pipeline utilities for Dataverse for Teams."
+      - name: "Power Platform Solution Modifier"
+        url: /tools/cicd/power-platform-solution-modifier/
+        description: "Adjust Power Platform solutions as part of ALM workflows."
+      - name: "Upload Markdown to Wiki"
+        url: /tools/cicd/upload-md-to-wiki/
+        description: "Publish Markdown documentation to an Azure DevOps wiki."
+      - name: "Playwright for Power Platform"
+        url: /tools/cicd/playwright-for-power-platform/
+        description: "Browser-testing support for Power Platform delivery pipelines."
+      - name: "Power Platform Documentation Extension"
+        url: /tools/cicd/power-platform-documentation-extension/
+        description: "Document Power Platform solution components through developer tooling."
   - id: diagnostics
     title: "Debugging & diagnostics"
     icon: debug
-    description: "Troubleshoot network issues and compare code."
+    description: "Investigate network traffic and compare code or web files."
     tools:
       - name: "HAR Analyzer"
         url: https://har.mightora.io/
@@ -48,7 +107,7 @@ groups:
   - id: architecture
     title: "Architecture & planning"
     icon: map
-    description: "Communicate architecture and plan the future."
+    description: "Model solutions, visualise technology choices and plan delivery."
     tools:
       - name: "Architecture Lab"
         url: https://architecture-lab.mightora.io/
@@ -62,7 +121,7 @@ groups:
   - id: engagement
     title: "Presentation & engagement"
     icon: present
-    description: "Present, share and collect feedback."
+    description: "Present, share information and gather feedback."
     tools:
       - name: "QR Studio"
         url: https://qr.mightora.io/
@@ -76,47 +135,8 @@ groups:
   - id: connectivity
     title: "Connectivity & utilities"
     icon: connect
-    description: "Quick utilities for getting connected."
+    description: "Quick utilities for helping people get connected."
     tools:
       - name: "Connect"
         url: https://connect.mightora.io/
         description: "Help with device connectivity and Wi-Fi setup."
-legacy:
-  - title: "DevOps & pipeline extensions"
-    items:
-      - name: "Commit to Repo"
-        url: /tools/cicd/commit-to-repo/
-      - name: "Dataverse 4 Teams Tools"
-        url: /tools/cicd/dataverse-4-teams-tools/
-      - name: "Power Platform Solution Modifier"
-        url: /tools/cicd/power-platform-solution-modifier/
-      - name: "Upload Markdown to Wiki"
-        url: /tools/cicd/upload-md-to-wiki/
-      - name: "Playwright for Power Platform"
-        url: /tools/cicd/playwright-for-power-platform/
-      - name: "Power Platform Documentation Extension"
-        url: /tools/cicd/power-platform-documentation-extension/
-  - title: "Power Automate"
-    items:
-      - name: "Calculate Working Day"
-        url: /tools/power-automate-connectors/calculate-working-day/
-      - name: "Email Domain Checker"
-        url: /tools/power-automate-connectors/email-domain-checker/
-      - name: "Multi Filter Array"
-        url: /tools/power-automate-connectors/multi-filter-array/
-      - name: "Proxy"
-        url: /tools/power-automate-connectors/proxy/
-      - name: "Send Email with Graph"
-        url: /tools/power-automate-connectors/send-email-with-graph/
-      - name: "SharePoint with Graph"
-        url: /tools/power-automate-connectors/sharepoint-with-graph/
-      - name: "Auto Tag DevOps Tickets into Emails"
-        url: /tools/power-automate-templates/auto-tag-devops-tickets-into-emails/
-  - title: "PCF & developer utilities"
-    items:
-      - name: "Calculate Elapsed Time"
-        url: /tools/pcf/calculate-elapsed-time/
-      - name: "iFrame with Split URL"
-        url: /tools/pcf/iframe-with-split-url/
-      - name: "Developer Tools Install Script"
-        url: /tools/developer/tools-quick-install/

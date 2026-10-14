@@ -41,15 +41,5 @@ jobs:
           python3 .github/workflows/update_cards.py .
       - name: Verify Hugo build
         run: hugo --gc --minify --baseURL "https://mightora.io/"
-      - name: Verify rendered public tool URLs
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          page=(Path('public')/'index.html').read_text(encoding='utf8')
-          catalogue=Path('data/toolhub.yaml').read_text(encoding='utf8')
-          urls=re.findall(r'^\s+url: (https://[^\s]+)',catalogue,re.M)
-          missing=[u for u in urls if u not in page]
-          assert not missing,missing
-          print('Rendered homepage includes all 17 public tool links')
-          PY
+      - name: Verify both catalogue pages have exactly 33 unique tools
+        run: python3 scripts/check_rendered_toolhub.py

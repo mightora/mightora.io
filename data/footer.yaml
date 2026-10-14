@@ -19,6 +19,8 @@ sections:
     links:
       - {name: "Power BI & analytics", url: "/#power-bi"}
       - {name: "Power Platform", url: "/#power-platform"}
+      - {name: "Power Automate & connectors", url: "/#power-automate"}
+      - {name: "DevOps & ALM", url: "/#devops"}
       - {name: "Debugging & diagnostics", url: "/#diagnostics"}
       - {name: "Architecture & planning", url: "/#architecture"}
       - {name: "Presentation & engagement", url: "/#engagement"}
