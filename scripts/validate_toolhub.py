@@ -67,3 +67,22 @@ assert all(url in external for url in sample_urls), "Missing a connector sample 
 assert source.count("        kind: sample") == len(sample_slugs), "Sample count or classification mismatch"
 assert 'eq .kind "sample"' in template and "Sample connector" in template
 print("PASS: 40 unique resources (18 apps + 6 sample connectors + 16 documentation pages), 8 categories")
+
+# Home-only figures are based on the catalogue rather than manual numbers.
+tpl = (root / "layouts/shortcodes/tool-hub.html").read_text(encoding="utf-8")
+assert 'if .Page.IsHome' in tpl and 'class="mt-site-metrics"' in tpl
+for variable in ("$resources", "$apps", "$docs", "$samples"):
+    assert variable in tpl
+assert 'site.Params.cloudflareStats.endpoint' in tpl
+assert 'data-cloudflare-stats-url' in tpl
+base = (root / "layouts/_default/baseof.html").read_text(encoding="utf-8")
+style = (root / "assets/css/custom.css").read_text(encoding="utf-8")
+assert 'mt-home-page' in base and 'body.mt-home-page .hextra-toc' in style
+assert 'mt-site-metrics-grid' in style
+frontend = (root / "static/js/cloudflare-stats.js").read_text(encoding="utf-8")
+assert 'credentials: "omit"' in frontend
+assert "CF_API_TOKEN" not in frontend
+worker = (root / "workers/cloudflare-traffic/src/index.mjs").read_text(encoding="utf-8")
+assert "CF_API_TOKEN" in worker and "caches.default" in worker
+assert "last_24_hours" in worker and "ORIGINS" in worker
+print("PASS: homepage tool metrics and optional Cloudflare stats integration")
