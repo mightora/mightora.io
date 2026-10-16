@@ -165,5 +165,6 @@ groups:
     description: "Quick utilities for helping people get connected."
     tools:
       - name: "Connect"
-        url: https://connect.mightora.io/
-        description: "Help with device connectivity and Wi-Fi setup."
+        url: http://connect.mightora.io/
+        description: "Open a plain HTTP page to trigger a public Wi-Fi captive portal sign-in."
+        kind: http-only
