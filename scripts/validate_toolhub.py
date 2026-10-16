@@ -53,7 +53,7 @@ assert "{{ range .tools }}" in template
 assert "$hub.legacy" not in template
 assert 'class="mt-original"' not in template
 assert "40 tools" in template and "8 categories" in template
-assert 'hasPrefix .url "https://"' in template
+assert 'hasPrefix .url "http"' in template
 for label, anchor in (("Build", "power-platform"), ("Inspect", "diagnostics"),
                       ("Architect", "architecture"), ("Deploy", "devops")):
     assert f"<strong>{label}</strong>" in template, label
