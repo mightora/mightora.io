@@ -30,7 +30,7 @@
       {{- $resources = add $resources 1 }}
       {{- if eq .kind "sample" }}
         {{- $samples = add $samples 1 }}
-      {{- else if hasPrefix .url "https://" }}
+      {{- else if or (hasPrefix .url "https://") (eq .url "http://connect.mightora.io/") }}
         {{- $apps = add $apps 1 }}
       {{- else }}
         {{- $docs = add $docs 1 }}
@@ -118,9 +118,9 @@
       <span class="mt-group-count">{{ len .tools }} tools</span>
     </div>
     <div class="mt-tool-grid">{{ range .tools }}
-      {{ $external := hasPrefix .url "https://" }}
+      {{ $external := or (hasPrefix .url "https://") (eq .url "http://connect.mightora.io/") }}
       <a class="mt-tool" href="{{ .url | safeURL }}" {{ if $external }}target="_blank" rel="noopener noreferrer" aria-label="Open {{ .name }} in a new tab"{{ else }}aria-label="View {{ .name }} documentation"{{ end }}>
-        <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span>{{ if eq .kind "sample" }}<span class="mt-tool-kind">Sample connector</span>{{ end }}<span class="mt-outbound" aria-hidden="true">↗</span></div>
+        <div class="mt-tool-meta"><span class="mt-mini-icon" aria-hidden="true"></span>{{ if eq .kind "sample" }}<span class="mt-tool-kind">Sample connector</span>{{ end }}{{ if eq .kind "http-only" }}<span class="mt-tool-kind">HTTP only</span>{{ end }}<span class="mt-outbound" aria-hidden="true">↗</span></div>
         <h3>{{ .name }}</h3><p>{{ .description }}</p><span class="mt-tool-link">{{ if eq .kind "sample" }}Explore sample{{ else if $external }}Open tool{{ else }}Explore tool{{ end }} <span aria-hidden="true">→</span></span>
       </a>
     {{ end }}</div>

@@ -11,7 +11,7 @@ template = (root / "layouts/shortcodes/tool-hub.html").read_text(encoding="utf-8
 # Both app URLs and local documentation pages are first-class catalogue entries.
 urls = re.findall(r"^        url:\s+(\S+)\s*$", source, re.M)
 names = re.findall(r'^      - name:\s+"([^"]+)"\s*$', source, re.M)
-external = [u for u in urls if u.startswith("https://")]
+external = [u for u in urls if u.startswith("https://") or u == "http://connect.mightora.io/"]
 local = [u for u in urls if u.startswith("/tools/")]
 
 expected_hosts = {
@@ -22,6 +22,18 @@ expected_hosts = {
 }
 actual_hosts = {urlparse(url).hostname.removesuffix(".mightora.io") for url in external}
 assert actual_hosts == expected_hosts, f"Unexpected/missing apps: {actual_hosts ^ expected_hosts}"
+# Connect is intentionally plain HTTP to allow Wi-Fi captive portal interception.
+# No other public tool may silently move away from HTTPS.
+assert source.count("        kind: http-only") == 1
+assert "http://connect.mightora.io/" in external
+assert "https://connect.mightora.io/" not in source
+assert all(
+    url == "http://connect.mightora.io/" or url.startswith("https://")
+    for url in external
+), "All tools except Connect must use HTTPS"
+assert 'eq .url "http://connect.mightora.io/"' in template
+assert 'eq .kind "http-only"' in template
+
 assert len(external) == 24, f"Expected 24 externally linked resources, got {len(external)}"
 assert len(local) == 16, f"Expected 16 documented tools, got {len(local)}"
 assert len(urls) == len(names) == 40, (len(urls), len(names))
@@ -41,7 +53,7 @@ assert "{{ range .tools }}" in template
 assert "$hub.legacy" not in template
 assert 'class="mt-original"' not in template
 assert "40 tools" in template and "8 categories" in template
-assert 'hasPrefix .url "https://"' in template
+assert 'eq .url "http://connect.mightora.io/"' in template
 for label, anchor in (("Build", "power-platform"), ("Inspect", "diagnostics"),
                       ("Architect", "architecture"), ("Deploy", "devops")):
     assert f"<strong>{label}</strong>" in template, label
