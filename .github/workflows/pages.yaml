@@ -112,11 +112,11 @@ jobs:
             # Still return to main branch in case we're on a different branch
             git checkout main 2>/dev/null || true
           fi
+      - name: Bundle shared Mightora footer
+        uses: mightora/shared-ui/.github/actions/sync-footer@main
+        with:
+          output-directory: ./public
       - name: Upload artifact
-        - name: Bundle shared Mightora footer
-          uses: mightora/shared-ui/.github/actions/sync-footer@main
-          with:
-            output-directory: ./public
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
