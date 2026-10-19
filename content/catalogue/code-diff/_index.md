@@ -8,8 +8,6 @@ sidebar:
 illustration: "code-diff"
 ---
 
-# Code Diff: compare code and web files
-
 **Code Diff** is a Mightora browser tool for comparing code and web files. It can help developers examine differences while reviewing an implementation, investigating a regression or preparing a change.
 
 [Open Code Diff](https://code-diff.mightora.io/) · [Browse the other debugging tools](/#diagnostics) · [Browse Mightora source projects](https://github.com/mightora)
