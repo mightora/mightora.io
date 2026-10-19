@@ -21,6 +21,8 @@ class PageAudit(HTMLParser):
         self.canonical = None
         self.lang = None
         self.h1_count = 0
+        self.home_main = False
+        self.sidebar = False
         self.authors = 0
         self.footers = 0
         self.sections = []
@@ -43,6 +45,10 @@ class PageAudit(HTMLParser):
             self.canonical = attrs.get("href")
         if tag == "section" and attrs.get("id"):
             self.sections.append(attrs["id"])
+        if tag == "main" and "mt-landing" in (attrs.get("class") or "").split():
+            self.home_main = True
+        if tag == "aside" and "hextra-sidebar" in (attrs.get("class") or ""):
+            self.sidebar = True
         if tag == "h1":
             self.h1_count += 1
         if tag == "mightora-author":
@@ -115,6 +121,8 @@ def main():
     home_parser = PageAudit()
     home_parser.feed(homepage)
     assert home_parser.sections.index("power-platform") < home_parser.sections.index("power-bi")
+    assert home_parser.h1_count == 1, f"Homepage H1 count: {home_parser.h1_count}"
+    assert home_parser.home_main, "Homepage must use the dedicated full-width layout"
     assert "mt-tool-guides" in homepage
     assert "mt-document-illustration" in (
         PUBLIC / "catalogue" / "code-diff" / "index.html").read_text(encoding="utf-8")
