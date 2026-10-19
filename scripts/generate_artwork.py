@@ -28,7 +28,7 @@ def illustration_key(path: Path) -> str:
 
 def title_from_frontmatter(source: str, fallback: str) -> str:
     match = re.search(r"^title:\s*[\"']?(.+?)[\"']?\s*$", source, re.M)
-    return match.group(1).strip(' "\\'') if match else fallback.replace("-", " ").title()
+    return match.group(1).strip().strip('"').strip("'") if match else fallback.replace("-", " ").title()
 
 
 def diagram(title: str, key: str) -> str:
