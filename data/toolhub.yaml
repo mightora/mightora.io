@@ -1,23 +1,6 @@
 # Single source of truth: every Mightora tool is grouped by purpose, not hosting type.
 # Use a public app URL for hosted apps, or an existing /tools/... page for documented tools.
 groups:
-  - id: power-bi
-    title: "Power BI & analytics"
-    icon: chart
-    description: "Explore, inspect and compare Power BI assets."
-    tools:
-      - name: "Power BI Diff"
-        url: https://power-bi-diff.mightora.io/
-        description: "Compare Power BI assets and spot changes."
-      - name: "Semantic Model"
-        url: https://semantic-model.mightora.io/
-        description: "Explore semantic-model structure."
-      - name: "Power BI Inspector"
-        url: https://powerbi-inspector.mightora.io/
-        description: "Inspect Power BI report components."
-      - name: "DAX"
-        url: https://dax.mightora.io/
-        description: "Work with DAX expressions."
   - id: power-platform
     title: "Power Platform development"
     icon: flow
@@ -97,6 +80,20 @@ groups:
       - name: "Auto Tag DevOps Tickets into Emails"
         url: /tools/power-automate-templates/auto-tag-devops-tickets-into-emails/
         description: "Power Automate template for linking DevOps tickets with emails."
+  - id: architecture
+    title: "Architecture & planning"
+    icon: map
+    description: "Model solutions, visualise technology choices and plan delivery."
+    tools:
+      - name: "Architecture Lab"
+        url: https://architecture-lab.mightora.io/
+        description: "Create architecture diagrams."
+      - name: "Technology Radar"
+        url: https://radar.mightora.io/
+        description: "Visualise technology decisions."
+      - name: "Roadmaps"
+        url: https://roadmaps.mightora.io/
+        description: "Plan workstreams and dependencies."
   - id: devops
     title: "DevOps & ALM"
     icon: rocket
@@ -131,20 +128,23 @@ groups:
       - name: "Code Diff"
         url: https://code-diff.mightora.io/
         description: "Compare code and web files."
-  - id: architecture
-    title: "Architecture & planning"
-    icon: map
-    description: "Model solutions, visualise technology choices and plan delivery."
+  - id: power-bi
+    title: "Power BI & analytics"
+    icon: chart
+    description: "Explore, inspect and compare Power BI assets."
     tools:
-      - name: "Architecture Lab"
-        url: https://architecture-lab.mightora.io/
-        description: "Create architecture diagrams."
-      - name: "Technology Radar"
-        url: https://radar.mightora.io/
-        description: "Visualise technology decisions."
-      - name: "Roadmaps"
-        url: https://roadmaps.mightora.io/
-        description: "Plan workstreams and dependencies."
+      - name: "Power BI Diff"
+        url: https://power-bi-diff.mightora.io/
+        description: "Compare Power BI assets and spot changes."
+      - name: "Semantic Model"
+        url: https://semantic-model.mightora.io/
+        description: "Explore semantic-model structure."
+      - name: "Power BI Inspector"
+        url: https://powerbi-inspector.mightora.io/
+        description: "Inspect Power BI report components."
+      - name: "DAX"
+        url: https://dax.mightora.io/
+        description: "Work with DAX expressions."
   - id: engagement
     title: "Presentation & engagement"
     icon: present
