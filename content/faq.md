@@ -11,14 +11,14 @@ Get quick answers to common questions about Mightora tools and Power Platform au
 
 ### How do I start using Mightora connectors?
 
-1. **Browse our connectors** in the [Connectors section](/power-automate-connectors/)
-2. **Try them first** with our [Interactive Tools](/try-tools/)
+1. **Browse the catalogue** in [All Mightora tools](/tools/)
+2. **Explore browser apps** from the [tool directory](/tools/)
 3. **Follow the setup guides** for each connector
-4. **Join our community** for support and tips
+4. **Check the project repository** for maintenance information and issues
 
 ### Are the connectors really free?
 
-Yes! All Mightora connectors are completely free to use. There are no hidden costs, usage limits, or premium tiers. We're committed to supporting the Power Platform community.
+Mightora lists tools that are free to explore. A specific tool may depend on Microsoft licences, external APIs or other services that carry their own conditions or costs. Check the tool's documentation and the licence of its source repository before deploying or modifying it.
 
 ### Do I need any special permissions or licenses?
 
@@ -44,74 +44,41 @@ Most connectors work with standard Power Platform licenses. Specific requirement
 
 ### How reliable are the APIs?
 
-Our APIs maintain 99.9% uptime with global redundancy. You can monitor real-time status on our [Status Page](https://stats.uptimerobot.com/3EPW8gBu4N).
+Availability and support arrangements differ between projects. We do not publish a universal uptime guarantee for all Mightora tools. You can consult the [public service status page](https://stats.uptimerobot.com/3EPW8gBu4N), bearing in mind that monitoring does not guarantee future availability.
 
 ### Can I use these in production environments?
 
-Absolutely! Our connectors are designed for enterprise use with:
-- Enterprise-grade security
-- Scalable infrastructure  
-- Comprehensive error handling
-- Full audit logging
+Evaluate the particular connector or application for your organisation's requirements, including its source, access permissions, dependencies, handling of sensitive information, resilience and licensing. Examples and community tooling do not constitute an independent security certification.
 
 ### What about rate limits?
 
-We implement fair usage policies to ensure service quality for all users. Current limits:
-- Calculate Working Day: 1000 requests/hour per user
-- Email Domain Checker: 500 requests/hour per user
-- Graph Email: 100 requests/hour per user
-
-Need higher limits? [Contact us](https://iantweedie.biz) to discuss enterprise options.
+Limits depend on the individual tool and any downstream platform or API it calls. The catalogue does not assert numerical limits for services that have not been independently verified. Consult current Microsoft and tool-specific documentation before building a production dependency.
 
 ## 🔒 Security & Privacy
 
 ### How secure are your connectors?
 
-Security is our top priority:
-- All API calls use HTTPS/TLS encryption
-- No sensitive data is stored or logged
-- Regular security audits and updates
-- Compliance with Microsoft security standards
+Security characteristics differ by project and deployment. Inspect the code, required credentials, permissions, external dependencies and relevant GitHub checks before entering sensitive data. A passing CI or CodeQL badge is not a guarantee of security.
 
 ### What data do you collect?
 
-We collect minimal data for service improvement:
-- Basic usage statistics (anonymized)
-- Error logs for troubleshooting
-- Performance metrics
-
-We never collect:
-- Personal data from your flows
-- Business data or content
-- User credentials or tokens
-
-View our full [Privacy Policy](/privacy/) for details.
+The main Mightora website uses analytics and other third-party resources; see the [privacy policy](/privacy/) for the published policy. Individual applications may have different data flows and operators. Check each application's own network activity, documentation and privacy statement rather than assuming that all data stays in your browser.
 
 ## 🚀 Advanced Usage
 
 ### Can I modify or extend the connectors?
 
-While the connectors themselves are proprietary, we provide:
-- Complete API documentation
-- Sample implementations
-- Custom integration guidance
-- Enterprise customization services
+Many Mightora projects make their source available in the [Mightora GitHub organisation](https://github.com/mightora). Reuse rights are governed by each project's actual licence. Review the licence file and contribution guidance before redistributing or extending a project.
 
 ### Do you offer enterprise support?
 
-Yes! We provide enterprise support including:
-- Priority technical support
-- Custom connector development
-- Integration consulting
-- Training and workshops
-
-[Contact us](https://iantweedie.biz) for enterprise inquiries.
+Commercial support is not implied by the free tools catalogue. For enquiries about consulting or custom development, use the published [contact website](https://iantweedie.biz), without assuming a support contract exists.
 
 ### How do I report bugs or request features?
 
 We welcome feedback! You can:
 - Report issues on [GitHub](https://github.com/mightora)
-- Join discussions in our [Community Hub](/community/)
+- Review the project's GitHub issues and discussions, if enabled
 - Email us directly through our [Contact page](https://iantweedie.biz)
 
 ## 📚 Learning Resources
@@ -119,7 +86,7 @@ We welcome feedback! You can:
 ### Where can I find tutorials?
 
 Check out these learning resources:
-- [Interactive tool demos](/try-tools/)
+- [All Mightora tools](/tools/)
 - [TechTweedie blog](https://techtweedie.github.io) for detailed tutorials
 - YouTube videos embedded in each connector's documentation
 - [Community examples](/community/) from other users
@@ -128,20 +95,20 @@ Check out these learning resources:
 
 We provide various training options:
 - Free documentation and tutorials
-- Community support through GitHub
-- Enterprise training workshops
-- One-on-one consulting sessions
+- Individual open-source project documentation
+- Third-party/vendor training, where available
+- Contact for separate consulting enquiries
 
 ## 💡 Still Have Questions?
 
 Can't find what you're looking for? We're here to help!
 
 {{< cards >}}
-  {{< card link="/community/" title="Ask the Community" icon="users" >}}
+  {{< card link="https://github.com/mightora" title="GitHub Projects" icon="github" >}}
   {{< card link="https://github.com/mightora" title="GitHub Discussions" icon="github" >}}
   {{< card link="https://iantweedie.biz" title="Direct Contact" icon="email-at" >}}
 {{< /cards >}}
 
 ---
 
-*This FAQ is updated regularly. Last updated: January 2025*
+*Last reviewed: 19 October 2026. Verify individual project capabilities and privacy details before use.*
