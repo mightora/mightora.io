@@ -87,6 +87,19 @@ jobs:
           assert '/catalogue/architecture-lab/' in p.links
           print('PASS: Chrome navigation/author/footer smoke check')
           PY
+          if command -v npx >/dev/null; then
+            CHROME_PATH="$CHROME" timeout 180s npx --yes lighthouse@12.8.2 http://127.0.0.1:8765/ --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,seo,best-practices --output=json --output-path=screenshots/lighthouse-home.json --quiet || echo "::warning::Optional Lighthouse run could not complete"
+            if [ -s screenshots/lighthouse-home.json ]; then
+              python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('screenshots/lighthouse-home.json').read_text())
+          for k in ('performance','accessibility','seo','best-practices'):
+              score=data['categories'][k].get('score')
+              print(f'Lighthouse {k}: {round(score*100) if score is not None else "unmeasured"}')
+          PY
+            fi
+          fi
       - name: Save representative browser screenshots
         uses: actions/upload-artifact@v4
         if: always()
