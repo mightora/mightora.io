@@ -24,8 +24,11 @@
     {{- end -}}
   
     {{- partial "opengraph.html" . -}}
-    {{- template "_internal/schema.html" . -}}
+    {{- partial "seo-jsonld.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://mightora.io/images/mightoraIoLogo4-200x900.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mightora/shared-ui@main/shared.css" />
     {{- partialCached "head-css.html" . -}}
