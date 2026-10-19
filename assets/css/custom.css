@@ -294,3 +294,9 @@ mightora-author{display:block;}
 .mt-tool-guides p{margin:0!important;line-height:1.7!important;color:var(--text-muted,#6b7280)!important;}
 .mt-tool-guides a{font-weight:700;text-underline-offset:3px;color:var(--accent,#059669)!important;}
 @media(max-width:600px){.mt-tool-guides{padding:20px 18px;}}
+
+/* WCAG AA-minded darker accent for small interactive text on light surfaces. */
+.mt-primary{background:#047857!important;}
+.mt-primary:hover{background:#065f46!important;}
+.mt-tool-link,.mt-tool-kind,.mt-outbound,.mt-tool-guides a,.mt-original-grid li span,.mt-contribute .mt-overline,.mt-overline{color:#047857!important;}
+.dark .mt-tool-link,.dark .mt-tool-kind,.dark .mt-outbound,.dark .mt-tool-guides a,.dark .mt-overline{color:#6ee7b7!important;}
