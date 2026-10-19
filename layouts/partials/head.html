@@ -61,8 +61,10 @@
       }
     </script>
 
+    {{- if or (eq .RelPermalink "/analytics/") (eq .RelPermalink "/tools/power-automate-connectors/") }}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    {{- end }}
 
   
     {{ partial "custom/head-end.html" . }}
