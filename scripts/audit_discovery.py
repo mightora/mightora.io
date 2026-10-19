@@ -26,6 +26,7 @@ class PageAudit(HTMLParser):
         self.images = []
         self.structured = []
         self.in_jsonld = False
+        self.redirect = False
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
@@ -33,6 +34,8 @@ class PageAudit(HTMLParser):
             self.lang = attrs.get("lang")
         if tag == "title":
             self.in_title = True
+        if tag == "meta" and attrs.get("http-equiv", "").lower() == "refresh":
+            self.redirect = True
         if tag == "meta" and attrs.get("name") == "description":
             self.description = attrs.get("content")
         if tag == "link" and attrs.get("rel") == "canonical":
@@ -90,7 +93,7 @@ def main():
         parser = PageAudit()
         parser.feed(path.read_text(encoding="utf-8"))
         # Skip generated legacy redirects and aliases. They are not canonical content pages.
-        if not parser.canonical or parser.canonical not in urls:
+        if parser.redirect or not parser.canonical or parser.canonical not in urls:
             continue
         assert parser.lang and parser.lang.lower().startswith("en"), path
         assert parser.title and "".join(parser.title).strip(), path
