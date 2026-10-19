@@ -15,7 +15,11 @@
         {{ .Site.Title -}}
       {{ end -}}
     </title>
-    <meta name="description" content="{{ partial "utils/page-description.html" . }}" />
+    {{- $pageDescription := partial "utils/page-description.html" . -}}
+    {{- if lt (len (trim $pageDescription " ")) 20 -}}
+      {{- $pageDescription = printf "Explore %s on Mightora: practical developer resources, examples and documentation." .Title -}}
+    {{- end -}}
+    <meta name="description" content="{{ $pageDescription }}" />
   
     {{- with .Params.canonical -}}
       <link rel="canonical" href="{{ . }}" itemprop="url" />
