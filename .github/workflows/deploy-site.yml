@@ -30,6 +30,7 @@ jobs:
         run: |
           python3 .github/workflows/include_md.py .
           python3 .github/workflows/update_cards.py .
+          python3 scripts/generate_artwork.py
       - name: Build site
         env:
           HUGO_ENV: production
@@ -39,6 +40,11 @@ jobs:
         run: |
           python3 scripts/validate_toolhub.py
           python3 scripts/check_rendered_toolhub.py
+      - name: Generate and verify discovery assets
+        run: |
+          python3 -m pip install pyyaml
+          python3 scripts/generate_discovery.py
+          python3 scripts/audit_discovery.py
       - name: Bundle shared Mightora footer
         uses: mightora/shared-ui/.github/actions/sync-footer@main
         with:

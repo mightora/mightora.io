@@ -15,7 +15,11 @@
         {{ .Site.Title -}}
       {{ end -}}
     </title>
-    <meta name="description" content="{{ partial "utils/page-description.html" . }}" />
+    {{- $pageDescription := partial "utils/page-description.html" . -}}
+    {{- if lt (len (trim $pageDescription " ")) 20 -}}
+      {{- $pageDescription = printf "Explore %s on Mightora: practical developer resources, examples and documentation." .Title -}}
+    {{- end -}}
+    <meta name="description" content="{{ $pageDescription }}" />
   
     {{- with .Params.canonical -}}
       <link rel="canonical" href="{{ . }}" itemprop="url" />
@@ -24,8 +28,11 @@
     {{- end -}}
   
     {{- partial "opengraph.html" . -}}
-    {{- template "_internal/schema.html" . -}}
+    {{- partial "seo-jsonld.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://mightora.io/images/mightoraIoLogo4-200x900.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mightora/shared-ui@main/shared.css" />
     {{- partialCached "head-css.html" . -}}
@@ -54,8 +61,10 @@
       }
     </script>
 
+    {{- if or (eq .RelPermalink "/analytics/") (eq .RelPermalink "/tools/power-automate-connectors/") }}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    {{- end }}
 
   
     {{ partial "custom/head-end.html" . }}

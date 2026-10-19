@@ -1,0 +1,21 @@
+{{- /* Schema is derived from visible Hugo pages and the maintained toolhub catalogue. */ -}}
+{{- $org := dict "@type" "Organization" "@id" "https://mightora.io/#organization" "name" "Mightora" "url" "https://mightora.io/" "legalName" "Tweed Technology Limited" "sameAs" (slice "https://github.com/mightora") -}}
+{{- $graph := slice $org -}}
+{{- if .IsHome -}}
+  {{- $items := slice -}}
+  {{- range site.Data.toolhub.groups -}}
+    {{- range .tools -}}
+      {{- $url := .url -}}
+      {{- if hasPrefix $url "/" }}{{ $url = printf "https://mightora.io%s" $url }}{{ end -}}
+      {{- $items = append (dict "@type" "ListItem" "position" (add (len $items) 1) "name" .name "url" $url) $items -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $graph = append (dict "@type" "WebSite" "@id" "https://mightora.io/#website" "url" "https://mightora.io/" "name" "Mightora" "inLanguage" "en-GB" "publisher" (dict "@id" "https://mightora.io/#organization")) $graph -}}
+  {{- $graph = append (dict "@type" "CollectionPage" "@id" "https://mightora.io/#catalogue" "url" "https://mightora.io/" "name" "Mightora developer tools" "description" (.Params.description | default "Free-to-explore tools and examples for developers.") "mainEntity" (dict "@type" "ItemList" "itemListElement" $items)) $graph -}}
+{{- else -}}
+  {{- $description := .Params.description | default (.Summary | plainify | truncate 160) -}}
+  {{- $graph = append (dict "@type" "WebPage" "@id" .Permalink "url" .Permalink "name" .Title "description" $description "inLanguage" "en-GB" "isPartOf" (dict "@id" "https://mightora.io/#website") "publisher" (dict "@id" "https://mightora.io/#organization")) $graph -}}
+  {{- $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" "https://mightora.io/") (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+  {{- $graph = append (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) $graph -}}
+{{- end -}}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>

@@ -43,7 +43,67 @@ jobs:
         run: |
           python3 .github/workflows/include_md.py .
           python3 .github/workflows/update_cards.py .
+      - name: Create page artwork
+        run: python3 scripts/generate_artwork.py
       - name: Verify Hugo build
         run: hugo --gc --minify --baseURL "https://mightora.io/"
-      - name: Verify both catalogue pages have exactly 33 unique tools
-        run: python3 scripts/check_rendered_toolhub.py
+      - name: Generate discovery assets and validate rendered pages
+        run: |
+          python3 -m pip install pyyaml
+          python3 scripts/generate_discovery.py
+          python3 scripts/check_rendered_toolhub.py
+          python3 scripts/audit_discovery.py
+
+      - name: Browser-rendered screenshots and navigation smoke test
+        shell: bash
+        run: |
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then
+            echo "::warning::Chrome unavailable on runner; browser screenshots skipped"
+            exit 0
+          fi
+          mkdir -p screenshots
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory public >/tmp/mightora-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          sleep 2
+          "$CHROME" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --hide-scrollbars --window-size=1440,1000 --virtual-time-budget=5000 --screenshot=screenshots/home-desktop.png http://127.0.0.1:8765/
+          "$CHROME" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --hide-scrollbars --window-size=390,844 --force-device-scale-factor=1 --virtual-time-budget=5000 --screenshot=screenshots/home-mobile.png http://127.0.0.1:8765/
+          "$CHROME" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --hide-scrollbars --window-size=1440,1000 --virtual-time-budget=5000 --screenshot=screenshots/code-diff-guide.png http://127.0.0.1:8765/catalogue/code-diff/
+          "$CHROME" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --virtual-time-budget=5000 --dump-dom http://127.0.0.1:8765/ > screenshots/home-rendered.html
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Inspect(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.tags=[]; self.links=[]
+              def handle_starttag(self, tag, attrs):
+                  self.tags.append(tag); attrs=dict(attrs)
+                  if tag=='a': self.links.append(attrs.get('href', ''))
+          p=Inspect(); p.feed(Path('screenshots/home-rendered.html').read_text())
+          assert p.tags.count('mightora-footer') == 1
+          assert p.tags.count('mightora-author') == 1
+          assert '/catalogue/code-diff/' in p.links
+          assert '/catalogue/architecture-lab/' in p.links
+          print('PASS: Chrome navigation/author/footer smoke check')
+          PY
+          if command -v npx >/dev/null; then
+            CHROME_PATH="$CHROME" timeout 180s npx --yes lighthouse@12.8.2 http://127.0.0.1:8765/ --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,seo,best-practices --output=json --output-path=screenshots/lighthouse-home.json --quiet || echo "::warning::Optional Lighthouse run could not complete"
+            if [ -s screenshots/lighthouse-home.json ]; then
+              python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('screenshots/lighthouse-home.json').read_text())
+          for k in ('performance','accessibility','seo','best-practices'):
+              score=data['categories'][k].get('score')
+              print(f'Lighthouse {k}: {round(score*100) if score is not None else "unmeasured"}')
+          PY
+            fi
+          fi
+      - name: Save representative browser screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mightora-browser-review
+          path: screenshots/
+          if-no-files-found: warn
