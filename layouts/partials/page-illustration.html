@@ -1,0 +1,10 @@
+{{- if and (not .IsHome) .File -}}
+  {{- $key := replaceRE "[^a-z0-9]+" "-" (lower (trim .RelPermalink "/")) -}}
+  {{- $image := printf "illustrations/pages/%s.svg" $key -}}
+  {{- if fileExists (printf "static/%s" $image) -}}
+  <figure class="mt-document-illustration">
+    <img src="/{{ $image }}" width="680" height="220" loading="lazy" decoding="async" alt="Connected technical components representing {{ .Title }}" />
+    <figcaption>Illustration for {{ .Title }}</figcaption>
+  </figure>
+  {{- end -}}
+{{- end -}}
