@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-      - uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v6
       - name: Install Hugo Extended
         run: |
           wget -q -O "${{ runner.temp }}/hugo.deb" https://github.com/gohugoio/hugo/releases/download/v0.132.2/hugo_extended_0.132.2_linux-amd64.deb
