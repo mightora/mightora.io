@@ -300,3 +300,7 @@ mightora-author{display:block;}
 .mt-primary:hover{background:#065f46!important;}
 .mt-tool-link,.mt-tool-kind,.mt-outbound,.mt-tool-guides a,.mt-original-grid li span,.mt-contribute .mt-overline,.mt-overline{color:#047857!important;}
 .dark .mt-tool-link,.dark .mt-tool-kind,.dark .mt-outbound,.dark .mt-tool-guides a,.dark .mt-overline{color:#6ee7b7!important;}
+
+/* Readable Hextra documentation links in both supported themes. */
+.content a:not(.mt-btn){color:#047857;}
+.dark .content a:not(.mt-btn){color:#6ee7b7;}
