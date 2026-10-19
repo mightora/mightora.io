@@ -23,6 +23,7 @@ class PageAudit(HTMLParser):
         self.h1_count = 0
         self.authors = 0
         self.footers = 0
+        self.sections = []
         self.images = []
         self.structured = []
         self.in_jsonld = False
@@ -40,6 +41,8 @@ class PageAudit(HTMLParser):
             self.description = attrs.get("content")
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonical = attrs.get("href")
+        if tag == "section" and attrs.get("id"):
+            self.sections.append(attrs["id"])
         if tag == "h1":
             self.h1_count += 1
         if tag == "mightora-author":
@@ -109,7 +112,9 @@ def main():
         page_reports.append((path.relative_to(PUBLIC).as_posix(), parser.h1_count))
     assert len(page_reports) >= 20, page_reports
     homepage = (PUBLIC / "index.html").read_text(encoding="utf-8")
-    assert homepage.index('id="power-platform"') < homepage.index('id="power-bi"')
+    home_parser = PageAudit()
+    home_parser.feed(homepage)
+    assert home_parser.sections.index("power-platform") < home_parser.sections.index("power-bi")
     assert "mt-tool-guides" in homepage
     assert "mt-document-illustration" in (
         PUBLIC / "catalogue" / "code-diff" / "index.html").read_text(encoding="utf-8")
