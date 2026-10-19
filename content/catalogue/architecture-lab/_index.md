@@ -8,8 +8,6 @@ sidebar:
 illustration: "architecture-lab"
 ---
 
-# Architecture Lab: create architecture diagrams
-
 **Architecture Lab** is a Mightora browser application for creating architecture diagrams. It is listed under Architecture & Planning alongside Technology Radar and Roadmaps.
 
 [Open Architecture Lab](https://architecture-lab.mightora.io/) · [Explore architecture and planning tools](/#architecture) · [Browse Mightora source projects](https://github.com/mightora)
