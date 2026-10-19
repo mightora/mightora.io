@@ -4,7 +4,6 @@ description: Free Mightora tools for Power BI, Power Platform, developer diagnos
 toc: false
 sidebar:
   hide: true
-type: docs
 aliases:
   - /post250726/
 ---
