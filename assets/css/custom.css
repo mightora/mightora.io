@@ -304,3 +304,12 @@ mightora-author{display:block;}
 /* Readable Hextra documentation links in both supported themes. */
 .content a:not(.mt-btn){color:#047857;}
 .dark .content a:not(.mt-btn){color:#6ee7b7;}
+
+/* Keep official mobile menu fully visible on narrow handsets. The full logo remains. */
+@media (max-width: 520px){
+  mightora-header .header-inner{padding-left:12px;padding-right:12px;gap:6px;}
+  mightora-header .site-logo-divider,mightora-header .site-logo-text{display:none;}
+  mightora-header .site-logo-brand-img{max-width:155px;}
+  mightora-header .flex-gap{gap:6px;flex-shrink:0;}
+  mightora-header .mobile-menu-btn{width:38px;height:38px;flex-shrink:0;}
+}
