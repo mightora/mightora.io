@@ -1,3 +1,5 @@
+languageCode: en-GB
+enableGitInfo: true
 # Hugo configuration file
 title: mightora.io
 
