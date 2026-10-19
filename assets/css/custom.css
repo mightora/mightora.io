@@ -287,3 +287,10 @@ mightora-author{display:block;}
 .mt-document-illustration figcaption{margin-top:8px;color:var(--text-muted,#6b7280);font-size:.78rem;text-align:center;}
 .mt-tool-detail{display:inline-flex;margin:0 0 6px 5px;font-size:.78rem;font-weight:650;color:var(--accent,#059669)!important;text-underline-offset:3px;}
 @media (prefers-reduced-motion: reduce){.mt-document-illustration *{animation:none!important;}}
+
+/* Concise problem-to-tool journeys: real links in the initial HTML. */
+.mt-tool-guides{padding:26px 30px;margin:32px 0 0;border:1px solid var(--border,#d1d5db);border-radius:18px;background:var(--bg-card,#fff);}
+.mt-tool-guides h2{font-size:1.25rem!important;margin:0 0 9px!important;color:var(--text,#111827)!important;}
+.mt-tool-guides p{margin:0!important;line-height:1.7!important;color:var(--text-muted,#6b7280)!important;}
+.mt-tool-guides a{font-weight:700;text-underline-offset:3px;color:var(--accent,#059669)!important;}
+@media(max-width:600px){.mt-tool-guides{padding:20px 18px;}}
