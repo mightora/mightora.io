@@ -197,8 +197,8 @@ Use the `<mightora-header>` Web Component. It handles sticky positioning, light/
   site-name="My Site"
   site-name-html="My <span>Site</span>"
   site-url="/"
-  logo-light="https://cdn.jsdelivr.net/gh/mightora/shared-ui@main/main-logo.png"
-  logo-dark="https://cdn.jsdelivr.net/gh/mightora/shared-ui@main/main-logo.png"
+  logo-light="https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png"
+  logo-dark="https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png"
   theme-key="my-site-theme"
   nav-links='[
     {"label":"Home","url":"/"},
@@ -207,6 +207,8 @@ Use the `<mightora-header>` Web Component. It handles sticky positioning, light/
   ]'>
 </mightora-header>
 ```
+
+**Use the complete Mightora wordmark in every app's primary header.** The square/profile `main-logo.png` is not a main-header logo. TechTweedie branding belongs in author sections.
 
 ### Header design rules
 - Background: `#ffffff` (light) / `#1f1f1f` (dark)
